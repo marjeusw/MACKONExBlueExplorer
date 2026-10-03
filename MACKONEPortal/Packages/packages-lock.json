@@ -251,7 +251,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.picoxr": {
-      "version": "file:D:/programme/pico",
+      "version": "file:D:/Krisi All/Unity & Git Projects/PICO Unity Integration SDK-3.4.0-20260226",
       "depth": 0,
       "source": "local",
       "dependencies": {
