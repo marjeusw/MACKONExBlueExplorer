@@ -84,7 +84,7 @@ PlayerSettings:
   androidFullscreenMode: 1
   androidAutoRotationBehavior: 1
   androidPredictiveBackSupport: 1
-  androidApplicationEntry: 1
+  androidApplicationEntry: 2
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
   runInBackground: 1
@@ -150,7 +150,11 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 11400000, guid: 4e0da616136085f41a105116291bdb4b, type: 2}
+  - {fileID: 1782177634256349969, guid: 3c6f6a794dd5eea47a9f8cf3e03d645b, type: 2}
+  - {fileID: -5829384956142314001, guid: 81985bd7d26c3714f89a797902b9663d, type: 2}
+  - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   xboxOneDisableKinectGpuReservation: 1
@@ -180,7 +184,7 @@ PlayerSettings:
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 29
+  AndroidMinSdkVersion: 32
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 0
   AndroidPreferredDataLocation: 1
