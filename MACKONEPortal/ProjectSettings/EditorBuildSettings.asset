@@ -11,5 +11,6 @@ EditorBuildSettings:
   m_configObjects:
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: 82acabd6938678a45abee64a65a243b9, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 5c05698877334264281fe353400ac3b6, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 81985bd7d26c3714f89a797902b9663d, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 3c6f6a794dd5eea47a9f8cf3e03d645b, type: 2}
