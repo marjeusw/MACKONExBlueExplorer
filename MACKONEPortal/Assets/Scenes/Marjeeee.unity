@@ -681,35 +681,13 @@ GameObject:
   - component: {fileID: 650524585}
   - component: {fileID: 650524584}
   - component: {fileID: 650524583}
-  - component: {fileID: 650524582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 360Galaxy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &650524582
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650524581}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &650524583
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -795,7 +773,7 @@ GameObject:
   - component: {fileID: 655509407}
   - component: {fileID: 655509406}
   m_Layer: 0
-  m_Name: w
+  m_Name: portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -847,7 +825,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 51424cff6482bbc458fd170909983962, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -888,8 +866,8 @@ Transform:
   m_GameObject: {fileID: 655509405}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.11947, y: 0, z: 6.14}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5.44}
+  m_LocalScale: {x: 3.6614, y: 5.6998, z: 0.10577149}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
