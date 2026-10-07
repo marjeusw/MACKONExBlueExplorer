@@ -1,0 +1,1 @@
+D:\MACKONExBlueExplorer\MACKONEPortal\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\6h5w23z6\obj\arm64-v8a

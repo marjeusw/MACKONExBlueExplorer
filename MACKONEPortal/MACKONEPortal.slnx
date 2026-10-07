@@ -1,12 +1,12 @@
 ﻿<Solution>
-  <Project Path="Unity.XR.PICO.csproj" />
-  <Project Path="Pico.Spatializer.Example.csproj" />
-  <Project Path="PICO.Platform.csproj" />
-  <Project Path="PICO.TobSupport.csproj" />
-  <Project Path="Unity.XR.PICO.Editor.csproj" />
-  <Project Path="PICO.Platform.Editor.csproj" />
+  <Project Path="Unity.RenderPipelines.Universal.2D.Runtime.csproj" />
+  <Project Path="Unity.RenderPipelines.Universal.Runtime.csproj" />
+  <Project Path="Unity.RenderPipelines.Universal.Editor.csproj" />
+  <Project Path="Unity.RenderPipelines.Universal.Editor.Tests.csproj" />
+  <Project Path="Unity.RenderPipelines.Universal.2D.Editor.Overrides.csproj" />
+  <Project Path="Unity.RenderPipelines.Universal.Runtime.Tests.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
-  <Project Path="Pico.Spatializer.csproj" />
-  <Project Path="Pico.Spatializer.Editor.csproj" />
+  <Project Path="Unity.RenderPipeline.Universal.ShaderLibrary.csproj" />
+  <Project Path="Unity.RenderPipelines.Universal.Shaders.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>
