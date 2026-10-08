@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//This script must go onto the player HMD (ideally as a child)
 public class RaycastGazeInteractor : MonoBehaviour
 {
     LayerMask layerMask;

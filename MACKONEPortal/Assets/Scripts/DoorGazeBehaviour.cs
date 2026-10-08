@@ -2,30 +2,21 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.Assertions;
 
-// This script goes onto every door with a HingeJoint.
+// This script goes onto every door with an Animator
 public class DoorGazeBehaviour : MonoBehaviour
 {
-    private HingeJoint hinge;
+    private Animator animator;
 
     public bool isClosed = true;
     public float secondsUntilDoorClose = 0.0f;
 
     private void Start()
     {
-        hinge = GetComponent<HingeJoint>();
+        animator = GetComponent<Animator>();
 
-        if (hinge == null)
+        if (animator == null)
         {
-            Debug.LogError("No HingeJoint found on " + gameObject.name);
-        }
-        else
-        {
-            // Initialize Spring values
-            JointSpring spring = hinge.spring;
-            spring.spring = 10f;
-            spring.damper = 3f;
-            hinge.spring = spring;
-            hinge.useSpring = true;
+            Debug.LogError("No Animator found on " + gameObject.name);
         }
 
     }
@@ -46,26 +37,24 @@ public class DoorGazeBehaviour : MonoBehaviour
     [ContextMenu("Open")]
     public void Open()
     {
-        Assert.IsNotNull(hinge);
-        
+        Assert.IsNotNull(animator);
+
         isClosed = false;
         secondsUntilDoorClose = 2.0f;
 
-        JointSpring spring = hinge.spring;
-        spring.targetPosition = 120f;
+        animator.SetBool("IsOpen", true);
 
-        Debug.Log("Door opens. Current angle: " + hinge.angle);
+        Debug.Log("Door opens.");
     }
 
     [ContextMenu("Close")]
     public void Close()
     {
-        Assert.IsNotNull(hinge);
+        Assert.IsNotNull(animator);
 
         isClosed = true;
 
-        JointSpring spring = hinge.spring;
-        spring.targetPosition = 0f;
+        animator.SetBool("IsOpen", false);
 
         Debug.Log("Door closes.");
     }
