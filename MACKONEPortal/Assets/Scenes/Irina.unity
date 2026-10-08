@@ -582,7 +582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1042989917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,19 +678,19 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9bb0ec57d93710545a791977e6010c4c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1139635589}
+      addedObject: {fileID: 1139635591}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9bb0ec57d93710545a791977e6010c4c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1139635588}
+      addedObject: {fileID: 1139635590}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9bb0ec57d93710545a791977e6010c4c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1139635587}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9bb0ec57d93710545a791977e6010c4c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1139635591}
+      addedObject: {fileID: 1139635589}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9bb0ec57d93710545a791977e6010c4c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1139635590}
+      addedObject: {fileID: 1139635588}
   m_SourcePrefab: {fileID: 100100000, guid: 9bb0ec57d93710545a791977e6010c4c, type: 3}
 --- !u!1 &1139635586 stripped
 GameObject:
@@ -708,12 +708,12 @@ HingeJoint:
   m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: -0.1, y: 1, z: -1}
-  m_Axis: {x: 0, y: 0, z: -1}
+  m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  m_UseSpring: 0
+  m_UseSpring: 1
   m_Spring:
-    spring: 0
+    spring: 10
     damper: 0
     targetPosition: 0
   m_UseMotor: 0
@@ -721,12 +721,12 @@ HingeJoint:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 0
-  m_ExtendedLimits: 0
+  m_UseLimits: 1
+  m_ExtendedLimits: 1
   m_UseAcceleration: 0
   m_Limits:
     min: 0
-    max: 45
+    max: 180
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -744,7 +744,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139635586}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -812,18 +812,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1139635591}
-        m_TargetAssemblyTypeName: DoorGazeBehaviour, Assembly-CSharp
-        m_MethodName: Close
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1139635591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,7 +824,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d9074b8d2425d49bd7c09e840f2ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorGazeBehaviour
-  door: {fileID: 1139635586}
   isClosed: 0
   secondsUntilDoorClose: 2
 --- !u!1 &1387333802
