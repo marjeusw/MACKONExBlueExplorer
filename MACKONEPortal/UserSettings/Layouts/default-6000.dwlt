@@ -331,8 +331,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "UnityEditor.MainToolbarWindow\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -1920
-    y: 56
+    x: 0
+    y: 0
     width: 1920
     height: 36
   m_SerializedDataModeController:
@@ -669,8 +669,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -1629
-    y: 92
+    x: 292
+    y: 24
     width: 777
     height: 611
   m_SerializedDataModeController:
@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0.3816192, y: -0.21141377, z: -0.3364502}
+    m_Target: {x: -2.454924, y: 0.7053971, z: 20.870724}
     speed: 2
     m_Value: {x: 0.3816192, y: -0.21141377, z: -0.3364502}
   m_RenderMode: 0
@@ -1210,13 +1210,13 @@ MonoBehaviour:
     m_gridOpacity: 0.5
     m_NearestPlaneToHandleMode: 0
   m_Rotation:
-    m_Target: {x: 0.36482006, y: 0.30154392, z: -0.12618732, w: 0.8718394}
+    m_Target: {x: -0.033201065, y: 0.0799738, z: -0.00265566, w: -0.99630547}
     speed: 2
-    m_Value: {x: 0.36723372, y: 0.30246222, z: -0.12763932, w: 0.87026674}
+    m_Value: {x: -0.36482003, y: -0.30154392, z: 0.12618732, w: -0.87183934}
   m_Size:
-    m_Target: 1.5014111
+    m_Target: 9.900077
     speed: 2
-    m_Value: 1.4985471
+    m_Value: 1.5014111
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1338,8 +1338,25 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
     m_DynamicPanelBehaviorModified: 0
   m_ViewTransforms:
-    m_KeySerializationHelper: []
-    m_ValueSerializationHelper: []
+    m_KeySerializationHelper:
+    - {fileID: 8331329819894197399, guid: 549db681071108f47b4630d67d80d4a6, type: 2}
+    m_ValueSerializationHelper:
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
   m_AnimatorController: {fileID: 9100000, guid: 549db681071108f47b4630d67d80d4a6, type: 2}
   m_BreadCrumbs:
@@ -1377,8 +1394,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -1920
-    y: 729
+    x: 0
+    y: 661
     width: 1514
     height: 318
   m_SerializedDataModeController:
@@ -1432,13 +1449,9 @@ MonoBehaviour:
       m_rawData: 27487790737693
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511664961
-    - m_rawData: 1099511664962
-    - m_rawData: 1099511664963
-    - m_rawData: 1099511665426
-    - m_rawData: 1099511665430
-    - m_rawData: 1099511665432
-    - m_rawData: 1099511665433
+    - m_rawData: 1099511664675
+    - m_rawData: 1099511664676
+    - m_rawData: 1099511664677
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1472,9 +1485,9 @@ MonoBehaviour:
       m_rawData: 0
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511664961
-    - m_rawData: 1099511664962
-    - m_rawData: 1099511664963
+    - m_rawData: 1099511664675
+    - m_rawData: 1099511664676
+    - m_rawData: 1099511664677
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1620,7 +1633,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_LastSelectedObjectID:
-    m_rawData: 1099511664114
+    m_rawData: 0
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1694,8 +1707,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -1920
-    y: 92
+    x: 0
+    y: 24
     width: 290
     height: 611
   m_SerializedDataModeController:
@@ -1774,8 +1787,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -850
-    y: 92
+    x: 1071
+    y: 24
     width: 443
     height: 611
   m_SerializedDataModeController:
@@ -1881,8 +1894,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -405
-    y: 92
+    x: 1516
+    y: 24
     width: 404
     height: 955
   m_SerializedDataModeController:
@@ -1955,4 +1968,4 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_LastSelectedObjectID:
-    m_rawData: 1099511664114
+    m_rawData: 0
