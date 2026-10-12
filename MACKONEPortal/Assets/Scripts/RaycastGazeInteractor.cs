@@ -6,6 +6,7 @@ public class RaycastGazeInteractor : MonoBehaviour
 {
     LayerMask layerMask;
     [SerializeField] private SignalChannel Door1Channel;
+    [SerializeField] private SignalChannel Door4Channel;
 
     void Awake()
     {
@@ -33,6 +34,7 @@ public class RaycastGazeInteractor : MonoBehaviour
             if (hit.collider.CompareTag("Door"))   //tagdoor
             {
                 Door1Channel.Invoke();
+                Door4Channel.Invoke();
                 Debug.Log("lookedDoor");
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
                 
