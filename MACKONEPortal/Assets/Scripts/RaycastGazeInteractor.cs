@@ -15,6 +15,8 @@ public class RaycastGazeInteractor : MonoBehaviour
 
 
     [SerializeField] private SignalChannel Door1Channel;
+    [SerializeField] private SignalChannel Door2Channel;
+    [SerializeField] private SignalChannel Door3Channel;
     [SerializeField] private SignalChannel Door4Channel;
 
     void Awake()

@@ -34,6 +34,7 @@ TagManager:
   - QDSUIToggleCheckboxRadio
   - Table
   - Door
+  - GrandDoor
   layers:
   - Default
   - TransparentFX
