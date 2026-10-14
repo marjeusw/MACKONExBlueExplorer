@@ -3354,6 +3354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d51b2dc814d61d4783babbef6407c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RaycastGazeInteractor
+  gazeTime: 2
   Door1Channel: {fileID: 11400000, guid: 4fdcece84061bfe40bc54e08746e80d4, type: 2}
   Door2Channel: {fileID: 0}
   Door3Channel: {fileID: 0}
@@ -9236,6 +9237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d51b2dc814d61d4783babbef6407c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RaycastGazeInteractor
+  gazeTime: 1
   Door1Channel: {fileID: 11400000, guid: a0bb27d1a1f841a40a7ba2a7a45f01e3, type: 2}
   Door2Channel: {fileID: 11400000, guid: bf779f1124a11154298e8b18a480b7ec, type: 2}
   Door3Channel: {fileID: 11400000, guid: 4abb7485effc4334b953a45b5f05964c, type: 2}

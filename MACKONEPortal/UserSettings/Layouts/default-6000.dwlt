@@ -1160,9 +1160,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0.5118188, y: 0.3227231, z: 0.6046206}
+    m_Target: {x: -2.9471135, y: 0.30183554, z: 0.103132844}
     speed: 2
-    m_Value: {x: -1.4430279, y: 0.52307975, z: 0.63317746}
+    m_Value: {x: 0.5118188, y: 0.3227231, z: 0.6046206}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1209,13 +1209,13 @@ MonoBehaviour:
     m_gridOpacity: 0.5
     m_NearestPlaneToHandleMode: 0
   m_Rotation:
-    m_Target: {x: 0.12695615, y: -0.4489649, z: 0.064371355, w: 0.88227}
+    m_Target: {x: -0.4159157, y: 0.3249432, z: -0.16141655, w: -0.8342174}
     speed: 2
-    m_Value: {x: -0.24474956, y: 0.06509436, z: -0.01647022, w: -0.9673431}
+    m_Value: {x: -0.12695615, y: 0.44896486, z: -0.064371355, w: -0.88227}
   m_Size:
-    m_Target: 0.8403598
+    m_Target: 12.514176
     speed: 2
-    m_Value: 2.3370364
+    m_Value: 0.8403598
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1339,7 +1339,6 @@ MonoBehaviour:
   m_ViewTransforms:
     m_KeySerializationHelper:
     - {fileID: 8331329819894197399, guid: 549db681071108f47b4630d67d80d4a6, type: 2}
-    - {fileID: 229703219567767397, guid: 6b0f0d5800255d24aa4291c4c12256c2, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
@@ -1357,27 +1356,9 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 6b0f0d5800255d24aa4291c4c12256c2, type: 2}
-  m_BreadCrumbs:
-  - m_Target: {fileID: 229703219567767397, guid: 6b0f0d5800255d24aa4291c4c12256c2, type: 2}
-    m_ScrollPosition: {x: 0, y: 0}
+  m_AnimatorController: {fileID: 0}
+  m_BreadCrumbs: []
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
   blendTreeGraph: {fileID: 0}
@@ -1465,9 +1446,10 @@ MonoBehaviour:
       m_rawData: 1099511665075
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511665920
-    - m_rawData: 1099511665921
-    - m_rawData: 1099511665922
+    - m_rawData: 1099511666030
+    - m_rawData: 1099511666031
+    - m_rawData: 1099511666032
+    - m_rawData: 1099511666033
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1501,9 +1483,10 @@ MonoBehaviour:
       m_rawData: 0
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511665920
-    - m_rawData: 1099511665921
-    - m_rawData: 1099511665922
+    - m_rawData: 1099511666030
+    - m_rawData: 1099511666031
+    - m_rawData: 1099511666032
+    - m_rawData: 1099511666033
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

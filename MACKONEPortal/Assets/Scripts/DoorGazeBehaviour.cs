@@ -10,6 +10,9 @@ public class DoorGazeBehaviour : MonoBehaviour
     public bool isClosed = true;
     public float secondsUntilDoorClose = 0.0f;
 
+    private static DoorGazeBehaviour currentlyOpenDoor; //variable shared by all instances of the scripts to keep track of the opened doors 
+
+
     private void Start()
     {
 
@@ -26,6 +29,7 @@ public class DoorGazeBehaviour : MonoBehaviour
     {
         if (!isClosed)
         {
+            //check if another door was opened
             secondsUntilDoorClose -= Time.deltaTime;
 
             if (secondsUntilDoorClose <= 0)
@@ -34,6 +38,8 @@ public class DoorGazeBehaviour : MonoBehaviour
             }
         }
     }
+
+    
 
     void DifferentAnimators()
     {
@@ -61,12 +67,19 @@ public class DoorGazeBehaviour : MonoBehaviour
     [ContextMenu("Open")]
     public void Open()
     {
+        if (currentlyOpenDoor != null && currentlyOpenDoor != this)
+        {
+            currentlyOpenDoor.Close(); //closes the previously opened door (in case there is one)
+        }
+
+        currentlyOpenDoor = this;
+
         foreach (Animator animator in animators) //makes it so that either 1 or multiple animators in children or on object itself get played
         {
             Assert.IsNotNull(animator);
 
             isClosed = false;
-            secondsUntilDoorClose = 2.0f;
+            secondsUntilDoorClose = 60.0f;
 
             animator.SetBool("IsOpen", true);
 
@@ -86,6 +99,11 @@ public class DoorGazeBehaviour : MonoBehaviour
             animator.SetBool("IsOpen", false);
 
             Debug.Log("Door closes.");
+        }
+
+        if (currentlyOpenDoor == this)
+        {
+            currentlyOpenDoor = null; //forgets this door if its the currently open one
         }
     }
 }

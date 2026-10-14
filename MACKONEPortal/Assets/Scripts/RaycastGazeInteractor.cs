@@ -7,7 +7,7 @@ public class RaycastGazeInteractor : MonoBehaviour
     LayerMask layerMask;
 
     //for the 2 sec timer
-    float gazeTime = 2f;
+    public float gazeTime = 2f;
     float Timer = 0f; //for how long user has been looking
     SignalReceiver currentDoor; //what door they're looking at
 
