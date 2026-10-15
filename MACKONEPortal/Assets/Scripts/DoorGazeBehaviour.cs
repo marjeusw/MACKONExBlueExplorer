@@ -34,7 +34,7 @@ public class DoorGazeBehaviour : MonoBehaviour
 
             if (secondsUntilDoorClose <= 0)
             {
-                //Close();
+                Close();
             }
         }
     }
@@ -69,7 +69,7 @@ public class DoorGazeBehaviour : MonoBehaviour
     {
         if (currentlyOpenDoor != null && currentlyOpenDoor != this)
         {
-            //currentlyOpenDoor.Close(); //closes the previously opened door (in case there is one)
+            currentlyOpenDoor.Close(); //closes the previously opened door (in case there is one)
         }
 
         currentlyOpenDoor = this;

@@ -16,9 +16,9 @@ public class ObjectFunctions : MonoBehaviour
         Debug.Log("Door1 doin its thing");
         Studio1.SetActive(true);
 
-        //Studio2.SetActive(false);
-        //Studio3.SetActive(false);
-        //Studio4.SetActive(false);
+        Studio2.SetActive(false);
+        Studio3.SetActive(false);
+        Studio4.SetActive(false);
     }
 
     public void DoorTwo()
@@ -26,9 +26,9 @@ public class ObjectFunctions : MonoBehaviour
         Debug.Log("Door2 doin its thing");
         Studio2.SetActive(true);
 
-        //Studio1.SetActive(false);
-        //Studio3.SetActive(false);
-        //Studio4.SetActive(false);
+        Studio1.SetActive(false);
+        Studio3.SetActive(false);
+        Studio4.SetActive(false);
     }
 
     public void DoorThree()
@@ -36,9 +36,9 @@ public class ObjectFunctions : MonoBehaviour
         Debug.Log("Door3 doin its thing");
         Studio3.SetActive(true);
 
-        //Studio1.SetActive(false);
-        //Studio2.SetActive(false);
-        //Studio4.SetActive(false);
+        Studio1.SetActive(false);
+        Studio2.SetActive(false);
+        Studio4.SetActive(false);
     }
 
     public void DoorFour()
@@ -46,9 +46,9 @@ public class ObjectFunctions : MonoBehaviour
         Debug.Log("Door4 doin its thing");
         Studio4.SetActive(true);
 
-        //Studio1.SetActive(false);
-        //Studio2.SetActive(false);
-        //Studio3.SetActive(false);
+        Studio1.SetActive(false);
+        Studio2.SetActive(false);
+        Studio3.SetActive(false);
 
     }
 }
