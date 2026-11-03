@@ -73,6 +73,6 @@ public class Pointer : MonoBehaviour
         spline.SetTangentMode(4, mode: TangentMode.Mirrored, BezierTangent.Out);
 
         //this is for rendering of the visuals for the spline, whether that is a mesh or something else
-        GetComponent<SplineInstantiate>().enabled = true;
+        GetComponent<SplineExtrude>().enabled = true;
     }
 }
