@@ -2305,10 +2305,10 @@ GameObject:
   - component: {fileID: 133402903}
   - component: {fileID: 133402902}
   - component: {fileID: 133402901}
-  - component: {fileID: 133402900}
   - component: {fileID: 133402899}
+  - component: {fileID: 133402904}
   m_Layer: 10
-  m_Name: ShutterDoor
+  m_Name: ShutterDoor3
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2333,30 +2333,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 24.753304, y: 36.791435, z: 1.0308146}
-  m_Center: {x: 4.280165, y: -2.5973582, z: -12.714198}
---- !u!95 &133402900
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133402898}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8eb2c1286f01b5646883047b1f79f906, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_Size: {x: 24.753304, y: 28.761347, z: 1.0308146}
+  m_Center: {x: 4.280165, y: -6.612402, z: -12.714198}
 --- !u!114 &133402901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2387,7 +2365,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1651583460}
         m_TargetAssemblyTypeName: ObjectFunctions, Assembly-CSharp
-        m_MethodName: DoorFour
+        m_MethodName: DoorThree
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2427,6 +2405,28 @@ Transform:
   - {fileID: 1705797219}
   m_Father: {fileID: 1404767993}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &133402904
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133402898}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 383f17f6a80fc3d48a5f079142adc1bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &138206615
 GameObject:
   m_ObjectHideFlags: 0
@@ -19593,10 +19593,10 @@ GameObject:
   - component: {fileID: 1137093727}
   - component: {fileID: 1137093726}
   - component: {fileID: 1137093725}
-  - component: {fileID: 1137093724}
   - component: {fileID: 1137093723}
+  - component: {fileID: 1137093728}
   m_Layer: 10
-  m_Name: ShutterDoor
+  m_Name: ShutterDoor2
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19623,28 +19623,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 24.753304, y: 36.791435, z: 1.0308146}
   m_Center: {x: 4.280165, y: -2.5973582, z: -12.714198}
---- !u!95 &1137093724
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1137093722}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8eb2c1286f01b5646883047b1f79f906, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1137093725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19675,7 +19653,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1651583460}
         m_TargetAssemblyTypeName: ObjectFunctions, Assembly-CSharp
-        m_MethodName: DoorFour
+        m_MethodName: DoorTwo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19715,6 +19693,28 @@ Transform:
   - {fileID: 1310268552}
   m_Father: {fileID: 344133636}
   m_LocalEulerAnglesHint: {x: 0, y: -64.046, z: 0}
+--- !u!95 &1137093728
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137093722}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e0448cae0dd9294b824ccfb3e5bcc91, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1139429291
 GameObject:
   m_ObjectHideFlags: 0
@@ -20090,7 +20090,7 @@ GameObject:
   - component: {fileID: 1178705067}
   - component: {fileID: 1178705068}
   m_Layer: 10
-  m_Name: ShutterDoor
+  m_Name: ShutterDoor4
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22043,8 +22043,8 @@ GameObject:
   - component: {fileID: 1260776215}
   - component: {fileID: 1260776214}
   - component: {fileID: 1260776213}
-  - component: {fileID: 1260776212}
   - component: {fileID: 1260776211}
+  - component: {fileID: 1260776216}
   m_Layer: 10
   m_Name: ShutterDoor
   m_TagString: Door
@@ -22073,28 +22073,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 24.753304, y: 36.791435, z: 1.0308146}
   m_Center: {x: 4.280165, y: -2.5973582, z: -12.714198}
---- !u!95 &1260776212
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260776210}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8eb2c1286f01b5646883047b1f79f906, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1260776213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22125,7 +22103,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1651583460}
         m_TargetAssemblyTypeName: ObjectFunctions, Assembly-CSharp
-        m_MethodName: DoorFour
+        m_MethodName: DoorOne
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22165,6 +22143,28 @@ Transform:
   - {fileID: 12161743}
   m_Father: {fileID: 208337455}
   m_LocalEulerAnglesHint: {x: 0, y: -88.677, z: 0}
+--- !u!95 &1260776216
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260776210}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 63fee10d8da149342ba630aeb4b87f07, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1264395917
 GameObject:
   m_ObjectHideFlags: 0
@@ -33194,15 +33194,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910789930}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.09962367, z: -0, w: 0.9950252}
-  m_LocalPosition: {x: 1.29, y: 1.24, z: 2.28}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1110066800}
   - {fileID: 513587169}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -11.435, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1911479225
 GameObject:
   m_ObjectHideFlags: 0
