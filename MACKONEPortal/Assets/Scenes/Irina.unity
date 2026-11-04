@@ -16853,12 +16853,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpatialAnchor2.SpatialAnchorLocalLoader
   anchorPrefab: {fileID: 6966677233762856529, guid: 3ec6b85dd95302041b363de70b2362a2, type: 3}
   uuidPrefabMappings:
-  - uuid: 
-    prefab: {fileID: 0}
+  - uuid: ff7fd1d2-e5ef-de55-7f0c-de43dcebc100
+    prefab: {fileID: 5851067992160881520, guid: 22d0fe4488331154d95765a377491450, type: 3}
+  - uuid: fee00001-fa4f-273d-309f-3fbeb9346ad8
+    prefab: {fileID: 6966677233762856529, guid: 3ec6b85dd95302041b363de70b2362a2, type: 3}
   loadOnStart: 1
   spawnOnStart: 1
   spawnOnStartDelaySeconds: 1
-  eraseOnStart: 1
+  eraseOnStart: 0
   eraseOnStartUuids: []
   eraseOnRefresh: 1
   useUnboundSpawning: 1
@@ -16870,7 +16872,9 @@ MonoBehaviour:
   refreshKey: 114
   spawnKey: 115
   loadedUuids: []
-  savedUuids: []
+  savedUuids:
+  - ff7fd1d2-e5ef-de55-7f0c-de43dcebc100
+  - fee00001-fa4f-273d-309f-3fbeb9346ad8
   uuidDatabase: {fileID: 11400000, guid: d4a3463f90ef7e448bc287ab67a20c62, type: 2}
   autoSaveLoadedUuidsToAsset: 1
 --- !u!4 &954324182

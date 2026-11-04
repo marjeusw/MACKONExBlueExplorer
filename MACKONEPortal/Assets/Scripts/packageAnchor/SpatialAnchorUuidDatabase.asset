@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2be11b00d5509c44940ab3fb43d9398, type: 3}
   m_Name: SpatialAnchorUuidDatabase
   m_EditorClassIdentifier: Assembly-CSharp::SpatialAnchor2.SpatialAnchorUuidDatabase
-  uuids: []
+  uuids:
+  - ff7fd1d2-e5ef-de55-7f0c-de43dcebc100
+  - fee00001-fa4f-273d-309f-3fbeb9346ad8
   mappings: []
