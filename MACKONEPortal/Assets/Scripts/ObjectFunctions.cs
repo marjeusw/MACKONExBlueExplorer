@@ -13,7 +13,7 @@ public class ObjectFunctions : MonoBehaviour
 
     public void DoorOne()
     {
-        Debug.Log("Door1 doin its thing");
+        //Debug.Log("Door1 doin its thing");
         Studio1.SetActive(true);
 
         Studio2.SetActive(false);
@@ -23,7 +23,7 @@ public class ObjectFunctions : MonoBehaviour
 
     public void DoorTwo()
     {
-        Debug.Log("Door2 doin its thing");
+        //Debug.Log("Door2 doin its thing");
         Studio2.SetActive(true);
 
         Studio1.SetActive(false);
@@ -33,7 +33,7 @@ public class ObjectFunctions : MonoBehaviour
 
     public void DoorThree()
     {
-        Debug.Log("Door3 doin its thing");
+        //Debug.Log("Door3 doin its thing");
         Studio3.SetActive(true);
 
         Studio1.SetActive(false);
@@ -43,7 +43,7 @@ public class ObjectFunctions : MonoBehaviour
 
     public void DoorFour()
     {
-        Debug.Log("Door4 doin its thing");
+        //Debug.Log("Door4 doin its thing");
         Studio4.SetActive(true);
 
         Studio1.SetActive(false);

@@ -40,7 +40,7 @@ public class RaycastGazeInteractor : MonoBehaviour
 
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-            Debug.Log("Did Hit");
+            //Debug.Log("Did Hit");
 
             //checks if hit object has signal receiver (for now if its a door since the table doesn't have one yet)
             SignalReceiver door = hit.collider.GetComponentInParent<SignalReceiver>();
@@ -61,7 +61,7 @@ public class RaycastGazeInteractor : MonoBehaviour
                 if (Timer >= gazeTime && !doorActivated)
                 {
                     door.OnReceive(); //THIS door gets called
-                    Debug.Log("lookedDoor");
+                    //Debug.Log("lookedDoor");
                     doorActivated = true;
                 }
 
@@ -76,7 +76,7 @@ public class RaycastGazeInteractor : MonoBehaviour
         else
         { 
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white); 
-            Debug.Log("Did not Hit");
+            //Debug.Log("Did not Hit");
 
             ResetGaze(); //not looking at anything
         }
@@ -88,7 +88,7 @@ public class RaycastGazeInteractor : MonoBehaviour
         currentDoor = null;
         Timer = 0f;
         doorActivated = false;
-        Debug.Log("Gaze Cancelled"); //Gaze cancelled due to being less than 2 seconds
+        //Debug.Log("Gaze Cancelled"); //Gaze cancelled due to being less than 2 seconds
     }
 
     

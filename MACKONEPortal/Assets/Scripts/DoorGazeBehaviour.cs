@@ -83,7 +83,7 @@ public class DoorGazeBehaviour : MonoBehaviour
 
             animator.SetBool("IsOpen", true);
 
-            Debug.Log("Door opens.");
+            //Debug.Log("Door opens.");
         }
     }
 
@@ -98,7 +98,7 @@ public class DoorGazeBehaviour : MonoBehaviour
 
             animator.SetBool("IsOpen", false);
 
-            Debug.Log("Door closes.");
+            //Debug.Log("Door closes.");
         }
 
         if (currentlyOpenDoor == this)

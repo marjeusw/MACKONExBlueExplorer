@@ -16862,7 +16862,7 @@ MonoBehaviour:
   spawnOnStartDelaySeconds: 1
   eraseOnStart: 0
   eraseOnStartUuids: []
-  eraseOnRefresh: 1
+  eraseOnRefresh: 0
   useUnboundSpawning: 1
   ensureGrabbableComponents: 0
   spawnedUseGravity: 0
@@ -16872,9 +16872,7 @@ MonoBehaviour:
   refreshKey: 114
   spawnKey: 115
   loadedUuids: []
-  savedUuids:
-  - ff7fd1d2-e5ef-de55-7f0c-de43dcebc100
-  - fee00001-fa4f-273d-309f-3fbeb9346ad8
+  savedUuids: []
   uuidDatabase: {fileID: 11400000, guid: d4a3463f90ef7e448bc287ab67a20c62, type: 2}
   autoSaveLoadedUuidsToAsset: 1
 --- !u!4 &954324182
