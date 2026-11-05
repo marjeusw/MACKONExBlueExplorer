@@ -1,9 +1,10 @@
-using UnityEngine;
-
 //handles all the functions that happen when each door is used
+//mostly which studio should currently be visible
 
+using UnityEngine;
 public class ObjectFunctions : MonoBehaviour
 {
+   
 
     public GameObject Studio1;
     public GameObject Studio2;
@@ -11,6 +12,8 @@ public class ObjectFunctions : MonoBehaviour
     public GameObject Studio4;
 
 
+
+    //stores refs to all 4 studios (since after being instantiated, prefabs forgor all references that aren't in the prefab so studios gotta be reffed like dis)
     public void RegisterStudio(int studioNumber, GameObject studio)
     {
         switch (studioNumber)
@@ -36,47 +39,107 @@ public class ObjectFunctions : MonoBehaviour
                 break;
         }
 
-        Debug.Log("Registered Studio " + studioNumber + ": " + studio.name);
     }
 
-    public void DoorOne()
+
+    //after receiving studio numbr, decides on the following studio and also gets the audio source from studio loader
+    public void ShowStudio(int studioNumber, AudioSource windowAudio)
     {
-        //Debug.Log("Door1 doin its thing");
-        Studio1.SetActive(true);
+        //turns off all studios first
+        if (Studio1 != null) Studio1.SetActive(false);
+        if (Studio2 != null) Studio2.SetActive(false);
+        if (Studio3 != null) Studio3.SetActive(false);
+        if (Studio4 != null) Studio4.SetActive(false);
 
-        Studio2.SetActive(false);
-        Studio3.SetActive(false);
-        Studio4.SetActive(false);
+        //plays audio from audio source
+        if (windowAudio != null)
+        {
+            windowAudio.Play();
+        }
+
+        //turns on selected studio
+        switch (studioNumber)
+        {
+            case 1:
+                if (Studio1 != null) Studio1.SetActive(true);
+               
+                break;
+            case 2:
+                if (Studio2 != null) Studio2.SetActive(true);
+               
+                break;
+            case 3:
+                if (Studio3 != null) Studio3.SetActive(true);
+         
+                break;
+            case 4:
+                if (Studio4 != null) Studio4.SetActive(true);
+               
+                break;
+            default:
+                Debug.LogWarning("Invalid studio numbrr: " + studioNumber);
+                break;
+        }
     }
 
-    public void DoorTwo()
-    {
-        //Debug.Log("Door2 doin its thing");
-        Studio2.SetActive(true);
 
-        Studio1.SetActive(false);
-        Studio3.SetActive(false);
-        Studio4.SetActive(false);
-    }
+    //edit in case we want coroutined delay (didn't look gud tho so I scratched it for now (overlapping environments))
+    //Delays the studio disappearing
+    //private IEnumerator SwitchStudioAfterDelay(int studioNumber)
+    //{
+    //    //remembers which studio was active before switching
+    //    int previousStudio = currentStudio;
 
-    public void DoorThree()
-    {
-        //Debug.Log("Door3 doin its thing");
-        Studio3.SetActive(true);
+    //    //turns on selected studio
+    //    switch (studioNumber)
+    //    {
+    //        case 1:
+    //            if (Studio1 != null) Studio1.SetActive(true);
 
-        Studio1.SetActive(false);
-        Studio2.SetActive(false);
-        Studio4.SetActive(false);
-    }
+    //            break;
+    //        case 2:
+    //            if (Studio2 != null) Studio2.SetActive(true);
 
-    public void DoorFour()
-    {
-        //Debug.Log("Door4 doin its thing");
-        Studio4.SetActive(true);
+    //            break;
+    //        case 3:
+    //            if (Studio3 != null) Studio3.SetActive(true);
 
-        Studio1.SetActive(false);
-        Studio2.SetActive(false);
-        Studio3.SetActive(false);
+    //            break;
+    //        case 4:
+    //            if (Studio4 != null) Studio4.SetActive(true);
 
-    }
+    //            break;
+    //        default:
+    //            Debug.LogWarning("Invalid studio numbrr: " + studioNumber);
+    //            yield break;
+    //    }
+
+    //    yield return new WaitForSeconds(environmentDelay);
+
+    //    //only deactivates the previous studio 
+    //    switch (previousStudio)
+    //    {
+    //        case 1:
+    //            if (Studio1 != null) Studio1.SetActive(false);
+    //            break;
+
+    //        case 2:
+    //            if (Studio2 != null) Studio2.SetActive(false);
+    //            break;
+
+    //        case 3:
+    //            if (Studio3 != null) Studio3.SetActive(false);
+    //            break;
+
+    //        case 4:
+    //            if (Studio4 != null) Studio4.SetActive(false);
+    //            break;
+    //    }
+
+    //    currentStudio = studioNumber;
+
+
+    //}
+
+
 }
