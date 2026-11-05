@@ -11,6 +11,34 @@ public class ObjectFunctions : MonoBehaviour
     public GameObject Studio4;
 
 
+    public void RegisterStudio(int studioNumber, GameObject studio)
+    {
+        switch (studioNumber)
+        {
+            case 1:
+                Studio1 = studio;
+                break;
+
+            case 2:
+                Studio2 = studio;
+                break;
+
+            case 3:
+                Studio3 = studio;
+                break;
+
+            case 4:
+                Studio4 = studio;
+                break;
+
+            default:
+                Debug.LogWarning("Invalid studio number: " + studioNumber);
+                break;
+        }
+
+        Debug.Log("Registered Studio " + studioNumber + ": " + studio.name);
+    }
+
     public void DoorOne()
     {
         //Debug.Log("Door1 doin its thing");
