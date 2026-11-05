@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 43
+    y: 0
     width: 1920
     height: 36
   m_SerializedDataModeController:
@@ -668,8 +668,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1006
-    y: 79
+    x: 1007
+    y: 24
     width: 442
     height: 781
   m_SerializedDataModeController:
@@ -776,7 +776,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 79
+    y: 24
     width: 300
     height: 781
   m_SerializedDataModeController:
@@ -855,8 +855,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 301
-    y: 79
+    x: 302
+    y: 24
     width: 703
     height: 781
   m_SerializedDataModeController:
@@ -1412,11 +1412,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.26570553, y: 0.19442853, z: -0.055985067, w: -0.9432614}
     speed: 2
-    m_Value: {x: -0.2656195, y: 0.19289018, z: -0.05555095, w: -0.9429495}
+    m_Value: {x: -0.26570553, y: 0.19442853, z: -0.055985067, w: -0.9432614}
   m_Size:
     m_Target: 8.472009
     speed: 2
-    m_Value: 2.104087
+    m_Value: 8.472009
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1541,9 +1541,6 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: 8331329819894197399, guid: 549db681071108f47b4630d67d80d4a6, type: 2}
     - {fileID: 4242012605732009952, guid: a45f3880a07641b4cb831fe3c1d66a76, type: 2}
-    - {fileID: 642936883858716900, guid: 8eb2c1286f01b5646883047b1f79f906, type: 2}
-    - {fileID: -919455945101929158, guid: 383f17f6a80fc3d48a5f079142adc1bb, type: 2}
-    - {fileID: 7968641383162696, guid: 5e0448cae0dd9294b824ccfb3e5bcc91, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
@@ -1577,59 +1574,9 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.68428105
-      e01: 0
-      e02: 0
-      e03: -161.53212
-      e10: 0
-      e11: 0.68428105
-      e12: 0
-      e13: 251.14142
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    - e00: 0.9340107
-      e01: 0
-      e02: 0
-      e03: -136.58884
-      e10: 0
-      e11: 0.9340107
-      e12: 0
-      e13: -5.795044
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    - e00: 0.64947367
-      e01: 0
-      e02: 0
-      e03: -17.473663
-      e10: 0
-      e11: 0.64947367
-      e12: 0
-      e13: 219.82632
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 383f17f6a80fc3d48a5f079142adc1bb, type: 2}
-  m_BreadCrumbs:
-  - m_Target: {fileID: -919455945101929158, guid: 383f17f6a80fc3d48a5f079142adc1bb, type: 2}
-    m_ScrollPosition: {x: 0, y: 0}
+  m_AnimatorController: {fileID: 0}
+  m_BreadCrumbs: []
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
   blendTreeGraph: {fileID: 0}
@@ -1663,7 +1610,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 886
+    y: 831
     width: 1449
     height: 148
   m_SerializedDataModeController:
@@ -1717,13 +1664,10 @@ MonoBehaviour:
       m_rawData: 1099511679457
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511679454
-    - m_rawData: 1099511679455
-    - m_rawData: 1099511679456
-    - m_rawData: 1099511679457
-    - m_rawData: 1099511681948
-    - m_rawData: 1099511681959
-    - m_rawData: 1099511681962
+    - m_rawData: 1099511681385
+    - m_rawData: 1099511681386
+    - m_rawData: 1099511681387
+    - m_rawData: 1099511681388
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1757,10 +1701,10 @@ MonoBehaviour:
       m_rawData: 0
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511679454
-    - m_rawData: 1099511679455
-    - m_rawData: 1099511679456
-    - m_rawData: 1099511679457
+    - m_rawData: 1099511681385
+    - m_rawData: 1099511681386
+    - m_rawData: 1099511681387
+    - m_rawData: 1099511681388
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1906,7 +1850,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_LastSelectedObjectID:
-    m_rawData: 3298534921195
+    m_rawData: 0
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1928,8 +1872,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1450
-    y: 79
+    x: 1451
+    y: 24
     width: 469
     height: 955
   m_SerializedDataModeController:
