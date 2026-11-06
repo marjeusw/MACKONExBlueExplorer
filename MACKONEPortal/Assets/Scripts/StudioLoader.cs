@@ -30,7 +30,7 @@ public class StudioLoader : MonoBehaviour
         }
 
        //the meat of the stuff (just calling the function in object manager)
-        objectManager.RegisterStudio(studioNumber, studioObject);
+        objectManager.RegisterStudio(studioNumber, studioObject, windowAudio);
 
     
     }
