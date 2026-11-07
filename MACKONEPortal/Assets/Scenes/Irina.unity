@@ -2752,28 +2752,28 @@ MonoBehaviour:
   m_Roots: []
   m_UpdateRate: 60
   m_UpdateMode: 3
-  m_Damping: 0.1
+  m_Damping: 0.455
   m_DampingDistrib:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_Elasticity: 0.1
+  m_Elasticity: 0.047
   m_ElasticityDistrib:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_Stiffness: 0.7
+  m_Stiffness: 0.076
   m_StiffnessDistrib:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_Inert: 0
+  m_Inert: 1
   m_InertDistrib:
     serializedVersion: 2
     m_Curve: []
@@ -3519,13 +3519,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 593819582}
-  - {fileID: 1238847157}
-  - {fileID: 196672031}
-  - {fileID: 151266858}
-  - {fileID: 106546662}
-  - {fileID: 1787683125}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &492099290
@@ -18964,3 +18958,4 @@ SceneRoots:
   - {fileID: 1052214961}
   - {fileID: 244799985}
   - {fileID: 1469872896}
+  - {fileID: 492099289}
