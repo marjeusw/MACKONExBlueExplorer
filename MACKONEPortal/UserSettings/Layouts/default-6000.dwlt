@@ -382,8 +382,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "UnityEditor.MainToolbarWindow\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -1920
-    y: 56
+    x: 0
+    y: 0
     width: 1920
     height: 36
   m_SerializedDataModeController:
@@ -720,8 +720,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -1068
-    y: 92
+    x: 853
+    y: 24
     width: 493
     height: 681
   m_SerializedDataModeController:
@@ -827,8 +827,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -1920
-    y: 92
+    x: 0
+    y: 24
     width: 336
     height: 681
   m_SerializedDataModeController:
@@ -907,8 +907,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -1583
-    y: 92
+    x: 338
+    y: 24
     width: 513
     height: 681
   m_SerializedDataModeController:
@@ -1464,11 +1464,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.05696579, y: 0.83447117, z: 0.06807746, w: 0.54580677}
     speed: 2
-    m_Value: {x: -0.056189902, y: 0.8328675, z: 0.06666892, w: 0.5465617}
+    m_Value: {x: -0.05696579, y: 0.83447117, z: 0.06807746, w: 0.54580677}
   m_Size:
     m_Target: 8.536995
     speed: 2
-    m_Value: 8.520018
+    m_Value: 8.536995
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1680,8 +1680,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -1920
-    y: 799
+    x: 0
+    y: 24
     width: 897
     height: 248
   m_SerializedDataModeController:
@@ -1735,13 +1735,10 @@ MonoBehaviour:
       m_rawData: 9895604714546
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511681463
-    - m_rawData: 1099511681464
-    - m_rawData: 1099511681465
-    - m_rawData: 1099511681466
-    - m_rawData: 1099511681700
-    - m_rawData: 1099511681714
-    - m_rawData: 1099511681717
+    - m_rawData: 1099511681538
+    - m_rawData: 1099511681539
+    - m_rawData: 1099511681540
+    - m_rawData: 1099511681541
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1775,10 +1772,10 @@ MonoBehaviour:
       m_rawData: 0
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511681463
-    - m_rawData: 1099511681464
-    - m_rawData: 1099511681465
-    - m_rawData: 1099511681466
+    - m_rawData: 1099511681538
+    - m_rawData: 1099511681539
+    - m_rawData: 1099511681540
+    - m_rawData: 1099511681541
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1925,7 +1922,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_LastSelectedObjectID:
-    m_rawData: 9895604714615
+    m_rawData: 0
 --- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1947,8 +1944,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -573
-    y: 92
+    x: 1348
+    y: 24
     width: 572
     height: 955
   m_SerializedDataModeController:
@@ -2051,8 +2048,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: -1022
-    y: 799
+    x: 899
+    y: 24
     width: 447
     height: 248
   m_SerializedDataModeController:
@@ -2106,12 +2103,10 @@ MonoBehaviour:
       m_rawData: 1099511681714
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511681463
-    - m_rawData: 1099511681464
-    - m_rawData: 1099511681465
-    - m_rawData: 1099511681466
-    - m_rawData: 1099511681700
-    - m_rawData: 1099511681717
+    - m_rawData: 1099511681538
+    - m_rawData: 1099511681539
+    - m_rawData: 1099511681540
+    - m_rawData: 1099511681541
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2145,10 +2140,10 @@ MonoBehaviour:
       m_rawData: 0
     m_ExpandedIDs:
     - m_rawData: 0
-    - m_rawData: 1099511681463
-    - m_rawData: 1099511681464
-    - m_rawData: 1099511681465
-    - m_rawData: 1099511681466
+    - m_rawData: 1099511681538
+    - m_rawData: 1099511681539
+    - m_rawData: 1099511681540
+    - m_rawData: 1099511681541
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
