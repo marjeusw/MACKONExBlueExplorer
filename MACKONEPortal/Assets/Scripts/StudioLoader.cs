@@ -2,6 +2,7 @@
 //is for which studio belongs to the respective window
 
 
+using System.Collections;
 using UnityEngine;
 
 public class StudioLoader : MonoBehaviour
@@ -9,11 +10,16 @@ public class StudioLoader : MonoBehaviour
     [SerializeField] private int studioNumber;
     [SerializeField] private GameObject studioObject;
     [SerializeField] private AudioSource windowAudio; //for handing over the audio source on the shutter
+    [SerializeField] private float closingSoundDelay = 0.5f; //for delay of window sound close
+
+    private DoorGazeBehaviour doorBehaviour;
 
     private ObjectFunctions objectManager;
 
     private void Start()
     {
+        doorBehaviour = GetComponent<DoorGazeBehaviour>();
+
         objectManager = FindAnyObjectByType<ObjectFunctions>();
 
         //just a to be safe
@@ -44,8 +50,37 @@ public class StudioLoader : MonoBehaviour
             return;
         }
 
+        if (doorBehaviour != null && doorBehaviour.isClosed)
+        {
+            return;
+        }
+
        
         //same here
         objectManager.ShowStudio(studioNumber, windowAudio);
+    }
+
+    public void OnDoorClosed()
+    {
+        //unlocks studio switching
+        if (objectManager != null)
+        {
+            objectManager.UnlockWindow(studioNumber);
+        }
+
+        //plays the closing sound afdter delay
+        StartCoroutine(PlayClosingSound());
+
+    }
+
+    private IEnumerator PlayClosingSound()
+    {
+        yield return new WaitForSeconds(closingSoundDelay);
+
+        if (windowAudio != null)
+        {
+
+            windowAudio.Play();
+        }
     }
 }

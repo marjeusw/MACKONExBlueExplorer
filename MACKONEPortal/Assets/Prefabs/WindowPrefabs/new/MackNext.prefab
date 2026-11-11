@@ -2451,8 +2451,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d9074b8d2425d49bd7c09e840f2ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorGazeBehaviour
-  isClosed: 0
-  secondsUntilDoorClose: 2
+  isClosed: 1
+  secondsUntilDoorClose: 0
 --- !u!114 &1155468367517835224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2551,6 +2551,7 @@ MonoBehaviour:
   studioNumber: 4
   studioObject: {fileID: 5567976879846119525}
   windowAudio: {fileID: 2255609932734274476}
+  closingSoundDelay: 1.5
 --- !u!82 &2255609932734274476
 AudioSource:
   m_ObjectHideFlags: 0

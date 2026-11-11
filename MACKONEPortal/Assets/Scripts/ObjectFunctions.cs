@@ -5,7 +5,9 @@ using UnityEngine;
 using System.Collections;
 public class ObjectFunctions : MonoBehaviour
 {
-    [SerializeField] private float closingSoundDelay = 0.5f;
+    //[SerializeField] private float closingSoundDelay = 0.5f;
+    private bool windowIsOpen = false;
+    private int openStudioNumber = -1;
 
     private int currentStudio = 1;
 
@@ -97,12 +99,28 @@ public class ObjectFunctions : MonoBehaviour
 
     public void ShowStudio(int studioNumber, AudioSource windowAudio)
     {
+        //no other studio opens while other window is still open
+        if (windowIsOpen && openStudioNumber != studioNumber)
+        {
+            return;
+        }
+
+        //locks studio switching until window closes
+        windowIsOpen = true;
+        openStudioNumber = studioNumber;
+
         //remembers which studio was last
         int previousStudio = currentStudio;
 
         //plays audio from audio source
+        //if (windowAudio != null)
+        //{
+        //    windowAudio.Play();
+        //}
         if (windowAudio != null)
         {
+            //Debug.Log("[ObjectFunctions] OPENING AUDIO: " + windowAudio.name + " | Parent: " + windowAudio.transform.parent.name + " | Position: " + windowAudio.transform.position);
+
             windowAudio.Play();
         }
 
@@ -140,38 +158,50 @@ public class ObjectFunctions : MonoBehaviour
         currentStudio = studioNumber;
 
         //plays closing sound
-        StartCoroutine(PlayClosingSound(previousStudio));
+        //StartCoroutine(PlayClosingSound(previousStudio));
+    }
+
+    //unlocks studio switching when window closes
+    public void UnlockWindow(int studioNumber)
+    {
+        if (openStudioNumber == studioNumber)
+        {
+            windowIsOpen = false;
+            openStudioNumber = -1;
+        }
     }
 
     //edit in case we want coroutined delay (didn't look gud tho so I scratched it for now (overlapping environments))
     //Delays the studio disappearing
-    private IEnumerator PlayClosingSound(int previousStudio)
-    {
-        yield return new WaitForSeconds(closingSoundDelay);
 
-        //turns on selected studio
-        switch (previousStudio)
-        {
-            case 1:
-                if (audio1 != null) audio1.Play(); ;
+    //not needed anymore since thats done with the animation ig
+    //private IEnumerator PlayClosingSound(int previousStudio)
+    //{
+    //    yield return new WaitForSeconds(closingSoundDelay);
 
-                break;
-            case 2:
-                if (audio2 != null) audio2.Play(); ;
+    //    //turns on selected studio
+    //    switch (previousStudio)
+    //    {
+    //        case 1:
+    //            if (audio1 != null) audio1.Play(); ;
 
-                break;
-            case 3:
-                if (audio3 != null) audio3.Play(); ;
+    //            break;
+    //        case 2:
+    //            if (audio2 != null) audio2.Play(); ;
 
-                break;
-            case 4:
-                if (audio4 != null) audio4.Play();
+    //            break;
+    //        case 3:
+    //            if (audio3 != null) audio3.Play(); ;
 
-                break;
-        }
+    //            break;
+    //        case 4:
+    //            if (audio4 != null) audio4.Play();
+
+    //            break;
+    //    }
 
 
-    }
+    //}
 
 
 }
