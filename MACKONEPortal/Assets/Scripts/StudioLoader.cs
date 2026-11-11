@@ -16,6 +16,8 @@ public class StudioLoader : MonoBehaviour
 
     private ObjectFunctions objectManager;
 
+    private bool openingSoundPlayed = false; //to keep the sound from playing when window is already opened
+
     private void Start()
     {
         doorBehaviour = GetComponent<DoorGazeBehaviour>();
@@ -57,11 +59,13 @@ public class StudioLoader : MonoBehaviour
 
        
         //same here
-        objectManager.ShowStudio(studioNumber, windowAudio);
+        objectManager.ShowStudio(studioNumber, openingSoundPlayed ? null : windowAudio); //? : is short for if else -> if openingsound true then no audio, if false play audio
+        openingSoundPlayed = true;
     }
 
     public void OnDoorClosed()
     {
+        openingSoundPlayed = false; //resets the bool for no window playing sound twice after opening
         //unlocks studio switching
         if (objectManager != null)
         {

@@ -73,6 +73,12 @@ public class DoorGazeBehaviour : MonoBehaviour
 
     public void Open()
     {
+        //to prevent the timer from resetting every time the windows looked at
+        if (!isClosed)
+        {
+            return;
+        }
+
         //don't open window if another window open
         if (currentlyOpenDoor != null && currentlyOpenDoor != this)
         {
