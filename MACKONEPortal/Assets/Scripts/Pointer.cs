@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.Splines;
 using Unity.Mathematics;
@@ -65,15 +66,13 @@ public class Pointer : MonoBehaviour
 
     private void Start()
     {
-        // Spline Animate MUST also be disabled
-        // in the Inspector before the scene starts.
-
+        // Spline Animate should be disabled in the Inspector.
         StartCoroutine(SetupSplineRoutine());
     }
 
     private IEnumerator SetupSplineRoutine()
     {
-        // Give spatial anchors time to initialise.
+        // Wait for spatial anchors to initialise.
         yield return new WaitForSeconds(initialDelay);
 
         splineContainer = GetComponent<SplineContainer>();
@@ -88,7 +87,7 @@ public class Pointer : MonoBehaviour
 
         Transform[] transforms = GetKnotTransforms();
 
-        // Check every transform before generating knots.
+        // Validate all transforms before generating spline.
         foreach (Transform target in transforms)
         {
             if (target == null)
@@ -99,9 +98,7 @@ public class Pointer : MonoBehaviour
                 yield break;
             }
 
-            Vector3 p = target.position;
-
-            if (!IsFinite(p))
+            if (!IsFinite(target.position))
             {
                 Debug.LogError(
                     "Pointer: Invalid position on " + target.name
@@ -110,10 +107,10 @@ public class Pointer : MonoBehaviour
             }
         }
 
-        // Clear old knots.
+        // Clear existing knots.
         spline.Clear();
 
-        // Generate knots.
+        // Add automatically smoothed knots.
         foreach (Transform target in transforms)
         {
             AddAutoKnot(target);
@@ -125,21 +122,23 @@ public class Pointer : MonoBehaviour
             yield break;
         }
 
-        // Enable visualisation after generation.
+        // Enable spline visualisation.
         if (splineExtrude != null)
+        {
             splineExtrude.enabled = true;
+        }
 
-        // Enable animation ONLY after spline generation.
+        // Enable animation after spline generation.
         if (splineAnimate != null)
         {
             splineAnimate.enabled = true;
-            Debug.Log("Pointer: Spline generated. Animation enabled.");
         }
+
+        Debug.Log("Pointer: Spline successfully generated!");
     }
 
     private void AddAutoKnot(Transform target)
     {
-        // Convert world position into Spline Container local space.
         Vector3 localPosition =
             splineContainer.transform.InverseTransformPoint(
                 target.position
@@ -149,15 +148,16 @@ public class Pointer : MonoBehaviour
             (float3)localPosition
         );
 
+        // Automatically calculate smooth tangents.
         spline.Add(knot, TangentMode.AutoSmooth);
     }
 
     private bool IsFinite(Vector3 p)
     {
         return
-            float.IsFinite(p.x) &&
-            float.IsFinite(p.y) &&
-            float.IsFinite(p.z);
+            !float.IsNaN(p.x) && !float.IsInfinity(p.x) &&
+            !float.IsNaN(p.y) && !float.IsInfinity(p.y) &&
+            !float.IsNaN(p.z) && !float.IsInfinity(p.z);
     }
 
     // Call after spatial anchor positions have been updated.
@@ -181,7 +181,8 @@ public class Pointer : MonoBehaviour
             if (!IsFinite(worldPosition))
             {
                 Debug.LogError(
-                    "Invalid anchor position: " + transforms[i].name
+                    "Pointer: Invalid anchor position: " +
+                    transforms[i].name
                 );
                 return;
             }
@@ -199,3 +200,4 @@ public class Pointer : MonoBehaviour
         }
     }
 }
+
