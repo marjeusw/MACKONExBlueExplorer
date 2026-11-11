@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Splines;
 using Unity.Mathematics;
+using System.Collections;
 
 public class Pointer : MonoBehaviour
 {
@@ -28,64 +29,19 @@ public class Pointer : MonoBehaviour
 
     public float pointerBendAmount;
 
+    [Header("Components")]
+    [SerializeField] private SplineAnimate splineAnimate;
+    [SerializeField] private SplineExtrude splineExtrude;
+
+    [Header("Initialisation")]
+    [SerializeField] private float initialDelay = 1f;
+
     private Spline spline;
+    private SplineContainer splineContainer;
 
-    void Start()
+    private Transform[] GetKnotTransforms()
     {
-        // Wait for spatial anchors to initialize
-        Invoke(nameof(SetupSpline), 1f);
-    }
-
-    void SetupSpline()
-    {
-        spline = GetComponent<SplineContainer>().Spline;
-
-        // Clear existing knots
-        spline.Clear();
-
-        // Add all knots in the correct order
-        AddAutoKnot(startPointTransform);
-
-        AddAutoKnot(staticTransform1);
-        AddAutoKnot(staticTransform2);
-        AddAutoKnot(staticTransform3);
-        AddAutoKnot(staticTransform4);
-        AddAutoKnot(staticTransform5);
-        AddAutoKnot(staticTransform6);
-
-        AddAutoKnot(anchorTransform1);
-        AddAutoKnot(anchorTransform2);
-        AddAutoKnot(anchorTransform3);
-        AddAutoKnot(anchorTransform4);
-
-        AddAutoKnot(staticTransform7);
-        AddAutoKnot(staticTransform8);
-        AddAutoKnot(staticTransform9);
-        AddAutoKnot(staticTransform10);
-        AddAutoKnot(staticTransform11);
-
-        AddAutoKnot(endPointTransform);
-
-        // Enable spline visualization
-        GetComponent<SplineExtrude>().enabled = true;
-    }
-
-    void AddAutoKnot(Transform target)
-    {
-        BezierKnot knot = new BezierKnot(
-            (float3)target.position
-        );
-
-        spline.Add(knot, TangentMode.AutoSmooth);
-    }
-
-    // Call this after spatial anchor positions have been updated
-    public void FindSetupObject()
-    {
-        if (spline == null)
-            return;
-
-        Transform[] transforms =
+        return new Transform[]
         {
             startPointTransform,
             staticTransform1,
@@ -105,12 +61,139 @@ public class Pointer : MonoBehaviour
             staticTransform11,
             endPointTransform
         };
+    }
+
+    private void Start()
+    {
+        // Spline Animate MUST also be disabled
+        // in the Inspector before the scene starts.
+
+        StartCoroutine(SetupSplineRoutine());
+    }
+
+    private IEnumerator SetupSplineRoutine()
+    {
+        // Give spatial anchors time to initialise.
+        yield return new WaitForSeconds(initialDelay);
+
+        splineContainer = GetComponent<SplineContainer>();
+
+        if (splineContainer == null)
+        {
+            Debug.LogError("Pointer: No SplineContainer found!");
+            yield break;
+        }
+
+        spline = splineContainer.Spline;
+
+        Transform[] transforms = GetKnotTransforms();
+
+        // Check every transform before generating knots.
+        foreach (Transform target in transforms)
+        {
+            if (target == null)
+            {
+                Debug.LogError(
+                    "Pointer: One or more knot transforms are missing!"
+                );
+                yield break;
+            }
+
+            Vector3 p = target.position;
+
+            if (!IsFinite(p))
+            {
+                Debug.LogError(
+                    "Pointer: Invalid position on " + target.name
+                );
+                yield break;
+            }
+        }
+
+        // Clear old knots.
+        spline.Clear();
+
+        // Generate knots.
+        foreach (Transform target in transforms)
+        {
+            AddAutoKnot(target);
+        }
+
+        if (spline.Count < 2)
+        {
+            Debug.LogError("Pointer: Not enough spline knots!");
+            yield break;
+        }
+
+        // Enable visualisation after generation.
+        if (splineExtrude != null)
+            splineExtrude.enabled = true;
+
+        // Enable animation ONLY after spline generation.
+        if (splineAnimate != null)
+        {
+            splineAnimate.enabled = true;
+            Debug.Log("Pointer: Spline generated. Animation enabled.");
+        }
+    }
+
+    private void AddAutoKnot(Transform target)
+    {
+        // Convert world position into Spline Container local space.
+        Vector3 localPosition =
+            splineContainer.transform.InverseTransformPoint(
+                target.position
+            );
+
+        BezierKnot knot = new BezierKnot(
+            (float3)localPosition
+        );
+
+        spline.Add(knot, TangentMode.AutoSmooth);
+    }
+
+    private bool IsFinite(Vector3 p)
+    {
+        return
+            float.IsFinite(p.x) &&
+            float.IsFinite(p.y) &&
+            float.IsFinite(p.z);
+    }
+
+    // Call after spatial anchor positions have been updated.
+    public void FindSetupObject()
+    {
+        if (spline == null || splineContainer == null)
+            return;
+
+        Transform[] transforms = GetKnotTransforms();
+
+        if (spline.Count != transforms.Length)
+            return;
 
         for (int i = 0; i < transforms.Length; i++)
         {
+            if (transforms[i] == null)
+                return;
+
+            Vector3 worldPosition = transforms[i].position;
+
+            if (!IsFinite(worldPosition))
+            {
+                Debug.LogError(
+                    "Invalid anchor position: " + transforms[i].name
+                );
+                return;
+            }
+
+            Vector3 localPosition =
+                splineContainer.transform.InverseTransformPoint(
+                    worldPosition
+                );
+
             BezierKnot knot = spline[i];
 
-            knot.Position = (float3)transforms[i].position;
+            knot.Position = (float3)localPosition;
 
             spline.SetKnot(i, knot);
         }
