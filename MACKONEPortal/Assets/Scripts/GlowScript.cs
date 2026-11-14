@@ -4,6 +4,12 @@ using UnityEngine;
 public class GlowScript : MonoBehaviour
 {
     private Renderer rend;
+
+   
+
+    float min = 0.1f;
+    float max = 0.4f;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,8 +21,9 @@ public class GlowScript : MonoBehaviour
     {
         while (true)
         {
-            yield return StartCoroutine(FadeOut(3f));
-            yield return StartCoroutine(FadeIn(3f));
+            float duration = Random.Range(1f, 3f);
+            yield return StartCoroutine(FadeOut(duration));
+            yield return StartCoroutine(FadeIn(duration));
         }
     }
 
@@ -24,7 +31,7 @@ public class GlowScript : MonoBehaviour
     {
         Color color = rend.material.color;
         float startAlpha = color.a; //from opaque
-        float targetAlpha = 0.2f; //to more transparent
+        float targetAlpha = Random.Range(min, max); //to more transparent
 
         for (float t = 0; t < duration; t+= Time.deltaTime)
         {
@@ -52,4 +59,22 @@ public class GlowScript : MonoBehaviour
         color.a = targetAlpha; //ends fully opaque
         rend.material.color = color;
     }
+
+    public IEnumerator FadeToAlpha(float targetAlpha, float duration)
+    {
+        Color color = rend.material.color;
+        float startAlpha = color.a;
+
+        for (float t = 0; t < duration; t += Time.deltaTime)
+        {
+            color.a = Mathf.Lerp(startAlpha, targetAlpha, t / duration);
+            rend.material.color = color;
+            yield return null;
+        }
+
+        color.a = targetAlpha;
+        rend.material.color = color;
+    }
+
+
 }
