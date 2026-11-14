@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1416934680968053509}
   - component: {fileID: 5057614192303565344}
   - component: {fileID: 7204420254068394269}
+  - component: {fileID: 6541082549027667121}
   m_Layer: 0
   m_Name: 'Not-Opened Glow '
   m_TagString: Untagged
@@ -90,6 +91,18 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6541082549027667121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221121441170462841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c16816fc636ec94eb1a292bc406ef3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &251983942556030535
 GameObject:
   m_ObjectHideFlags: 0
@@ -2453,6 +2466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorGazeBehaviour
   isClosed: 1
   secondsUntilDoorClose: 0
+  light: {fileID: 221121441170462841}
 --- !u!114 &1155468367517835224
 MonoBehaviour:
   m_ObjectHideFlags: 0

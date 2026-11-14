@@ -11,6 +11,8 @@ public class DoorGazeBehaviour : MonoBehaviour
 
     public bool isClosed = true;
     public float secondsUntilDoorClose = 0.0f;
+    public GameObject light;
+    private bool lightsShutter = true;
 
     private static DoorGazeBehaviour currentlyOpenDoor; //variable shared by all instances of the scripts to keep track of the opened doors 
 
@@ -89,6 +91,12 @@ public class DoorGazeBehaviour : MonoBehaviour
 
         isClosed = false;
         secondsUntilDoorClose = 5.0f; //until when door closes
+
+        lightsShutter = false; //gotta set the lights false before window opens the first time
+        if (lightsShutter == false)
+        {
+            light.SetActive(false);
+        }
 
         foreach (Animator animator in animators) //makes it so that either 1 or multiple animators in children or on object itself get played
         {
