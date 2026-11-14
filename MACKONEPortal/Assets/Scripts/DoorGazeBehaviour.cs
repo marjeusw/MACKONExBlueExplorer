@@ -127,7 +127,7 @@ public class DoorGazeBehaviour : MonoBehaviour
 
     private IEnumerator FadeOutThenDisable(GlowScript glow) //makes glow fade out after window is selected and then turns it off
     {
-        yield return glow.FadeToAlpha(0f, 3f);
+        yield return glow.FadeToAlpha(0f, 1f);
         light.SetActive(false);
 
         foreach (Animator animator in animators) //makes it so that either 1 or multiple animators in children or on object itself get played
