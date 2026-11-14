@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.Assertions;
 
 // This script goes onto every door with an Animator
@@ -92,11 +93,42 @@ public class DoorGazeBehaviour : MonoBehaviour
         isClosed = false;
         secondsUntilDoorClose = 5.0f; //until when door closes
 
-        lightsShutter = false; //gotta set the lights false before window opens the first time
-        if (lightsShutter == false)
+        if (lightsShutter && light != null)
         {
-            light.SetActive(false);
+            GlowScript glow = light.GetComponent<GlowScript>();
+
+            if (glow != null)
+            {
+                glow.StopAllCoroutines(); //stops glowscripts fadeloop and any fades it started
+                StartCoroutine(FadeOutThenDisable(glow));
+            }
+            else
+            {
+                Debug.LogError("no GlowScript found on " + light.name);
+            }
         }
+        else //for when the glow isn't there anymore
+        {
+            Debug.Log("No more Glow");
+            foreach (Animator animator in animators) //makes it so that either 1 or multiple animators in children or on object itself get played
+            {
+                Assert.IsNotNull(animator);
+
+                animator.SetBool("IsOpen", true);
+
+                //Debug.Log("Door opens.");
+            }
+        }
+
+
+
+
+    }
+
+    private IEnumerator FadeOutThenDisable(GlowScript glow) //makes glow fade out after window is selected and then turns it off
+    {
+        yield return glow.FadeToAlpha(0f, 1f);
+        light.SetActive(false);
 
         foreach (Animator animator in animators) //makes it so that either 1 or multiple animators in children or on object itself get played
         {
@@ -106,9 +138,11 @@ public class DoorGazeBehaviour : MonoBehaviour
 
             //Debug.Log("Door opens.");
         }
+        lightsShutter = false; //gotta set the lights false before window opens the first time
 
-      
     }
+
+
 
     [ContextMenu("Close")]
     public void Close()
@@ -139,4 +173,6 @@ public class DoorGazeBehaviour : MonoBehaviour
             studioLoader.OnDoorClosed(); //notifies StudioLoader
         }
     }
+
+
 }
