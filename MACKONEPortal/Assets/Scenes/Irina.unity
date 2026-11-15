@@ -815,6 +815,7 @@ GameObject:
   - component: {fileID: 95417078}
   - component: {fileID: 95417080}
   - component: {fileID: 95417079}
+  - component: {fileID: 95417081}
   m_Layer: 0
   m_Name: (TMP) Mack Family Description
   m_TagString: Untagged
@@ -989,6 +990,22 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &95417081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95417077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e927a299cf8f8904f894b4ff706e7920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TMPFade
+  targetText: {fileID: 0}
+  fadeDuration: 0.5
+  startingSizeMultiplier: 0.9
+  startingCharacterSpacing: -27.7
 --- !u!1 &95586948 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3848260121387882696, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
@@ -1539,6 +1556,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 368497656}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &236041210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c26a98e571a3cf046a6dc9e9506291cb, type: 3}
+  m_PrefabInstance: {fileID: 1097587332}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &240183016
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,6 +2403,7 @@ MonoBehaviour:
   Door2Channel: {fileID: 0}
   Door3Channel: {fileID: 0}
   Door4Channel: {fileID: 0}
+  photoFrames: []
 --- !u!4 &288255915 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4502472845115632589, guid: ecd06bf6c48629547b9eab0ed8c8c013, type: 3}
@@ -3152,6 +3175,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1916150447}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &353921830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e67fc29d167960469d4dc99f6aef2a9, type: 3}
+  m_PrefabInstance: {fileID: 1739735005}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &361609858
 GameObject:
   m_ObjectHideFlags: 0
@@ -4073,6 +4101,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c26a98e571a3cf046a6dc9e9506291cb, type: 3}
   m_PrefabInstance: {fileID: 1097587332}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &470976268
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236041210}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.47890747, z: 0.5512385}
+  m_Center: {x: -0, y: 1.438426, z: -0.42210957}
 --- !u!1001 &477677760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4571,6 +4620,7 @@ GameObject:
   - component: {fileID: 519309839}
   - component: {fileID: 519309841}
   - component: {fileID: 519309840}
+  - component: {fileID: 519309842}
   m_Layer: 0
   m_Name: (TMP) Mack 1780 Description
   m_TagString: Untagged
@@ -4743,6 +4793,22 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &519309842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519309838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e927a299cf8f8904f894b4ff706e7920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TMPFade
+  targetText: {fileID: 0}
+  fadeDuration: 0.5
+  startingSizeMultiplier: 0.9
+  startingCharacterSpacing: 3
 --- !u!1 &522311047
 GameObject:
   m_ObjectHideFlags: 0
@@ -10749,6 +10815,11 @@ MonoBehaviour:
   Door2Channel: {fileID: 11400000, guid: bf779f1124a11154298e8b18a480b7ec, type: 2}
   Door3Channel: {fileID: 11400000, guid: 4abb7485effc4334b953a45b5f05964c, type: 2}
   Door4Channel: {fileID: 11400000, guid: 4fdcece84061bfe40bc54e08746e80d4, type: 2}
+  photoFrames:
+  - photoFrame: {fileID: 353921830}
+    photoText: {fileID: 95417077}
+  - photoFrame: {fileID: 236041210}
+    photoText: {fileID: 519309838}
 --- !u!1 &863669827
 GameObject:
   m_ObjectHideFlags: 0
@@ -12860,6 +12931,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3300250814927642791, guid: a893c1c9e62620c409d20323100e9473, type: 3}
+      propertyPath: animationDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300250814927642791, guid: a893c1c9e62620c409d20323100e9473, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Assembly-CSharp::TMPScatteredReveal
+      objectReference: {fileID: 0}
     - target: {fileID: 3380412018941057676, guid: a893c1c9e62620c409d20323100e9473, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.5349925
@@ -13569,7 +13648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c26a98e571a3cf046a6dc9e9506291cb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.30707
+      value: -2.306
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c26a98e571a3cf046a6dc9e9506291cb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13610,7 +13689,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c26a98e571a3cf046a6dc9e9506291cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 470976268}
   m_SourcePrefab: {fileID: 100100000, guid: c26a98e571a3cf046a6dc9e9506291cb, type: 3}
 --- !u!1 &1110066799
 GameObject:
@@ -19959,7 +20041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e67fc29d167960469d4dc99f6aef2a9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.14176
+      value: -2.1406903
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e67fc29d167960469d4dc99f6aef2a9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20000,13 +20082,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e67fc29d167960469d4dc99f6aef2a9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1739735007}
   m_SourcePrefab: {fileID: 100100000, guid: 2e67fc29d167960469d4dc99f6aef2a9, type: 3}
 --- !u!4 &1739735006 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e67fc29d167960469d4dc99f6aef2a9, type: 3}
   m_PrefabInstance: {fileID: 1739735005}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1739735007
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353921830}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.43631983, y: 0.54023147, z: 0.67337525}
+  m_Center: {x: 0.044853687, y: 1.8435136, z: -0.40313238}
 --- !u!1 &1743381752
 GameObject:
   m_ObjectHideFlags: 0

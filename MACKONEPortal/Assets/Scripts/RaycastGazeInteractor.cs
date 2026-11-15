@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 //This script must go onto the player HMD (ideally as a child)
 public class RaycastGazeInteractor : MonoBehaviour
@@ -19,6 +20,22 @@ public class RaycastGazeInteractor : MonoBehaviour
     [SerializeField] private SignalChannel Door3Channel;
     [SerializeField] private SignalChannel Door4Channel;
 
+
+    // --------- NEW KRISI ADDITION ----------
+
+    [System.Serializable]
+    public class PhotoFrames
+    {
+        public GameObject photoFrame;
+        public GameObject photoText;
+
+    }
+    [SerializeField] private PhotoFrames[] photoFrames;
+
+    // ------ END KRISI ADDITION ------
+
+
+
     void Awake()
     {
         layerMask = LayerMask.GetMask("Doors");
@@ -28,7 +45,8 @@ public class RaycastGazeInteractor : MonoBehaviour
     {
         CheckRaycast();
 
-
+        //--------NEW KRISI ADDITION---------
+        CheckPhotoFrames(); 
 
     }
 
@@ -91,6 +109,70 @@ public class RaycastGazeInteractor : MonoBehaviour
         //Debug.Log("Gaze Cancelled"); //Gaze cancelled due to being less than 2 seconds
     }
 
-    
+
+
+    // --------- NEW KRISI ADDITION ----------
+
+    void CheckPhotoFrames()
+    {
+        RaycastHit hit;
+
+        bool hitSomething = Physics.Raycast(
+            transform.position,
+            transform.TransformDirection(Vector3.forward),
+            out hit,
+            Mathf.Infinity
+            );
+
+        GameObject activeRevealObject = null;
+
+        if (hitSomething)
+        {
+            // Check whether the hit belongs to one of our picture frames
+            foreach (PhotoFrames frame in photoFrames)
+            {
+                if (frame.photoFrame != null &&
+                    (hit.collider.transform == frame.photoFrame.transform ||
+                     hit.collider.transform.IsChildOf(frame.photoFrame.transform)))
+                {
+                    activeRevealObject = frame.photoText;
+                    break;
+                }
+            }
+        }
+
+        /*
+        // Activate the matching object and deactivate all others
+        foreach (PhotoFrames frame in photoFrames)
+        {
+            if (frame.photoText != null)
+            {
+                frame.photoText.SetActive(
+                    frame.photoText == activeRevealObject
+                );
+            }
+        }
+        */
+
+        foreach (PhotoFrames frame in photoFrames)
+        {
+            if (frame.photoText != null)
+            {
+                TMPFade fade =
+                    frame.photoText.GetComponent<TMPFade>();
+
+                if (fade != null)
+                {
+                    fade.SetVisible(
+                        frame.photoText == activeRevealObject
+                    );
+                }
+            }
+        }
+    }
 
 }
+
+
+
+
