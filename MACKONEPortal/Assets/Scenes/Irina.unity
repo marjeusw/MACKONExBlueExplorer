@@ -1150,6 +1150,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 988480368}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &172597556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 356e7508a94f9d54284d482d72dc555d, type: 3}
+  m_PrefabInstance: {fileID: 812576380}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &175164812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2804,7 +2809,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11b1d25636efae248b0005ad77e89837, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1295711820}
   m_SourcePrefab: {fileID: 100100000, guid: 11b1d25636efae248b0005ad77e89837, type: 3}
 --- !u!4 &309994165 stripped
 Transform:
@@ -6889,7 +6897,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 71235c49c622b0c449418ea71f8b9b9f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 955313547}
   m_SourcePrefab: {fileID: 100100000, guid: 71235c49c622b0c449418ea71f8b9b9f, type: 3}
 --- !u!4 &721654013 stripped
 Transform:
@@ -8313,13 +8324,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 356e7508a94f9d54284d482d72dc555d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 812576382}
   m_SourcePrefab: {fileID: 100100000, guid: 356e7508a94f9d54284d482d72dc555d, type: 3}
 --- !u!4 &812576381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 356e7508a94f9d54284d482d72dc555d, type: 3}
   m_PrefabInstance: {fileID: 812576380}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &812576382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172597556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7031a47212fa5a94497e4ee495668b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloatingFrames
+  plusHeight: 0.07
+  minusHeight: -0.03
+  movementSpeed: 0.04
 --- !u!1 &812855598
 GameObject:
   m_ObjectHideFlags: 0
@@ -12086,7 +12115,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 356e7508a94f9d54284d482d72dc555d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1273466168}
   m_SourcePrefab: {fileID: 100100000, guid: 356e7508a94f9d54284d482d72dc555d, type: 3}
 --- !u!4 &930511432 stripped
 Transform:
@@ -12152,7 +12184,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11b1d25636efae248b0005ad77e89837, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1811866116}
   m_SourcePrefab: {fileID: 100100000, guid: 11b1d25636efae248b0005ad77e89837, type: 3}
 --- !u!4 &932952952 stripped
 Transform:
@@ -12408,6 +12443,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &955313546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 71235c49c622b0c449418ea71f8b9b9f, type: 3}
+  m_PrefabInstance: {fileID: 721654012}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &955313547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955313546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7031a47212fa5a94497e4ee495668b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloatingFrames
+  plusHeight: 0.07
+  minusHeight: -0.03
+  movementSpeed: 0.04
 --- !u!1 &955701749
 GameObject:
   m_ObjectHideFlags: 0
@@ -15060,6 +15115,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 375700443}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1273466167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 356e7508a94f9d54284d482d72dc555d, type: 3}
+  m_PrefabInstance: {fileID: 930511431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1273466168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273466167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7031a47212fa5a94497e4ee495668b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloatingFrames
+  plusHeight: 0.07
+  minusHeight: -0.03
+  movementSpeed: 0.04
 --- !u!1 &1278108749
 GameObject:
   m_ObjectHideFlags: 0
@@ -15091,6 +15166,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 765685770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1295711819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 11b1d25636efae248b0005ad77e89837, type: 3}
+  m_PrefabInstance: {fileID: 309994164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1295711820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295711819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7031a47212fa5a94497e4ee495668b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloatingFrames
+  plusHeight: 0.07
+  minusHeight: -0.03
+  movementSpeed: 0.04
 --- !u!1 &1303465796
 GameObject:
   m_ObjectHideFlags: 0
@@ -16996,7 +17091,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 71235c49c622b0c449418ea71f8b9b9f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2010950104}
   m_SourcePrefab: {fileID: 100100000, guid: 71235c49c622b0c449418ea71f8b9b9f, type: 3}
 --- !u!4 &1515959172 stripped
 Transform:
@@ -20672,6 +20770,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1811866115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 11b1d25636efae248b0005ad77e89837, type: 3}
+  m_PrefabInstance: {fileID: 932952951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1811866116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811866115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7031a47212fa5a94497e4ee495668b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloatingFrames
+  plusHeight: 0.07
+  minusHeight: -0.03
+  movementSpeed: 0.04
 --- !u!1 &1815413624
 GameObject:
   m_ObjectHideFlags: 0
@@ -23252,6 +23370,26 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.008180305, y: -0.0053694975, z: -0.020344593}
     m_Extent: {x: 0.046097822, y: 0.067293465, z: 0.0557265}
   m_DirtyAABB: 0
+--- !u!1 &2010950103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 71235c49c622b0c449418ea71f8b9b9f, type: 3}
+  m_PrefabInstance: {fileID: 1515959171}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2010950104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010950103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7031a47212fa5a94497e4ee495668b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloatingFrames
+  plusHeight: 0.07
+  minusHeight: -0.03
+  movementSpeed: 0.04
 --- !u!1 &2014140174
 GameObject:
   m_ObjectHideFlags: 0

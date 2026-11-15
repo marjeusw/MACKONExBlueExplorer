@@ -3,11 +3,11 @@ using UnityEngine;
 public class FloatingFrames : MonoBehaviour
 {
     private bool IsRising = false;
-    public float plusHeight = 0.1f;
-    public float minusHeight = -0.4f;
+    public float plusHeight = 0.07f;
+    public float minusHeight = -0.03f;
     private float originalYPos;
     private float currentYPos;
-    public float movementSpeed = 0.3f;
+    public float movementSpeed = 0.04f;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
