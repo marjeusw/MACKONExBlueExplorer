@@ -12707,7 +12707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: 7358e191-33b7-43ca-b066-b2f00531ac66
-  instanceId: 1a5d5769-e53a-45b5-b050-92366200e821
+  instanceId: 5df1f3c4-3b61-4136-9cc7-415513d8e8b3
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
