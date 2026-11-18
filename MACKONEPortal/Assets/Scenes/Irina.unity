@@ -3046,7 +3046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &335198111
 Transform:
   m_ObjectHideFlags: 0
@@ -20536,6 +20536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8bba883dc78f4e4d86582d314cb36ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectFunctions
+  firstOpenObject: {fileID: 335198110}
   audio1: {fileID: 0}
   audio2: {fileID: 0}
   audio3: {fileID: 0}

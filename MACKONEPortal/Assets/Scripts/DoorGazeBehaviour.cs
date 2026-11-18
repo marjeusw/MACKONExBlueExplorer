@@ -15,6 +15,8 @@ public class DoorGazeBehaviour : MonoBehaviour
     public GameObject light;
     private bool lightsShutter = true;
 
+    private bool hasEverOpened = false; //to check if a window was opened before for the final crack setup
+
     private static DoorGazeBehaviour currentlyOpenDoor; //variable shared by all instances of the scripts to keep track of the opened doors 
 
 
@@ -92,6 +94,12 @@ public class DoorGazeBehaviour : MonoBehaviour
 
         isClosed = false;
         secondsUntilDoorClose = 5.0f; //until when door closes
+
+        if (!hasEverOpened) //happens only after window is allowed to open (so before its unlocked after the return functions above this function won't work)
+        {
+            hasEverOpened = true;
+            studioLoader.OnWindowFirstOpened(); //handing it to studio loader since its prefab no work stuff again (gotta use the proxy so object manager can access)
+        }
 
         if (lightsShutter && light != null)
         {

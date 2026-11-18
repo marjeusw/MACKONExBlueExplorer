@@ -87,4 +87,12 @@ public class StudioLoader : MonoBehaviour
             windowAudio.Play();
         }
     }
+
+    public void OnWindowFirstOpened() //reference to object manager (as always) since that ones from the prefab -> this ones for tracking if window was previously opened
+    {
+        if (objectManager != null)
+        {
+            objectManager.ActivateFirstOpenObject(studioNumber);
+        }
+    }
 }

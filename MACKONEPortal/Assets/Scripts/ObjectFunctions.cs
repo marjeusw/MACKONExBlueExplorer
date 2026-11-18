@@ -1,8 +1,9 @@
 //handles all the functions that happen when each door is used
 //mostly which studio should currently be visible
 
-using UnityEngine;
+using System;
 using System.Collections;
+using UnityEngine;
 public class ObjectFunctions : MonoBehaviour
 {
     //[SerializeField] private float closingSoundDelay = 0.5f;
@@ -10,6 +11,11 @@ public class ObjectFunctions : MonoBehaviour
     private int openStudioNumber = -1;
 
     private int currentStudio = 1;
+
+    [SerializeField] private GameObject firstOpenObject;
+
+    private bool[] windowsOpened = new bool[4]; //for all 4 windows to track for crack
+    private int openedWindowCount = 0;
 
     public AudioSource audio1;
     public AudioSource audio2;
@@ -168,6 +174,35 @@ public class ObjectFunctions : MonoBehaviour
         {
             windowIsOpen = false;
             openStudioNumber = -1;
+        }
+    }
+
+    public void ActivateFirstOpenObject(int studioNumber)
+    {
+        //studios 1-4 into index array ß-3
+        int index = studioNumber - 1;
+
+        //checks if the studio number is valid
+        if (index < 0 || index >= windowsOpened.Length)
+        {
+            Debug.LogWarning("Invalid studio number: " + studioNumber);
+            return;
+        }
+
+        //only counts each window once
+        if (!windowsOpened[index])
+        {
+            windowsOpened[index] = true;
+            openedWindowCount++;
+
+            Debug.Log("Window " + studioNumber + " opened for the first time! Total: " + openedWindowCount);
+        }
+
+        //activates object only after all four windows have been opened
+        if (openedWindowCount == 4 && firstOpenObject != null)
+        {
+            firstOpenObject.SetActive(true);
+            Debug.Log("All windows have been opened wee");
         }
     }
 
