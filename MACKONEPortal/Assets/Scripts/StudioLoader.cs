@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class StudioLoader : MonoBehaviour
 {
-    [SerializeField] private int studioNumber;
+    [SerializeField] private int studioNumber; //ref to which studio number it is
     [SerializeField] private GameObject studioObject;
     [SerializeField] private AudioSource windowAudio; //for handing over the audio source on the shutter
     [SerializeField] private float closingSoundDelay = 0.5f; //for delay of window sound close
@@ -93,6 +93,14 @@ public class StudioLoader : MonoBehaviour
         if (objectManager != null)
         {
             objectManager.ActivateFirstOpenObject(studioNumber);
+        }
+    }
+
+    public void OnGlowFinished()
+    {
+        if (objectManager != null)
+        {
+            objectManager.TryActivateFirstOpenObject();
         }
     }
 }

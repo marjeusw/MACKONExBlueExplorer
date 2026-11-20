@@ -1,6 +1,7 @@
 //handles all the functions that happen when each door is used
 //mostly which studio should currently be visible
 
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class ObjectFunctions : MonoBehaviour
 
     private bool[] windowsOpened = new bool[4]; //for all 4 windows to track for crack
     private int openedWindowCount = 0;
+    private bool firstOpenObjectActivated = false; //for the coroutine
 
     public AudioSource audio1;
     public AudioSource audio2;
@@ -195,14 +197,27 @@ public class ObjectFunctions : MonoBehaviour
             windowsOpened[index] = true;
             openedWindowCount++;
 
-            Debug.Log("Window " + studioNumber + " opened for the first time! Total: " + openedWindowCount);
+            //Debug.Log("Window " + studioNumber + " opened for the first time! Total: " + openedWindowCount);
         }
 
         //activates object only after all four windows have been opened
-        if (openedWindowCount == 4 && firstOpenObject != null)
+        //if (openedWindowCount == 4 && firstOpenObject != null)
+        //{
+        //    firstOpenObject.SetActive(true);
+        //    Debug.Log("All windows have been opened wee");
+        //}
+
+        
+    }
+
+    public void TryActivateFirstOpenObject()
+    {
+        if (openedWindowCount >= 4 && !firstOpenObjectActivated)
         {
             firstOpenObject.SetActive(true);
-            Debug.Log("All windows have been opened wee");
+            firstOpenObjectActivated = true;
+
+            Debug.Log("All windows have been opened after glow finished wee");
         }
     }
 

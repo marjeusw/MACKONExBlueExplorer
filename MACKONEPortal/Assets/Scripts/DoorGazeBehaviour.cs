@@ -138,6 +138,9 @@ public class DoorGazeBehaviour : MonoBehaviour
         yield return glow.FadeToAlpha(0f, 1f);
         light.SetActive(false);
 
+        //activates crack object after glow disappears
+        studioLoader.OnGlowFinished();
+
         foreach (Animator animator in animators) //makes it so that either 1 or multiple animators in children or on object itself get played
         {
             Assert.IsNotNull(animator);
