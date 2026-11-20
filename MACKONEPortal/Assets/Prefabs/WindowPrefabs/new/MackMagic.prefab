@@ -4434,6 +4434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2557028765783130203}
+  - component: {fileID: 7289517596386619296}
   m_Layer: 0
   m_Name: FRAME MACK FAMILY
   m_TagString: Untagged
@@ -4459,6 +4460,18 @@ Transform:
   - {fileID: 2167513634530021404}
   m_Father: {fileID: 3380412018941057676}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7289517596386619296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3569725003861723903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379eb787f5ea4cc438107b03e2beb768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &3581423041036921224
 GameObject:
   m_ObjectHideFlags: 0
@@ -12816,6 +12829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3879289334554791859}
+  - component: {fileID: 8146657454835930164}
   m_Layer: 0
   m_Name: FRAME 1780
   m_TagString: Untagged
@@ -12841,6 +12855,18 @@ Transform:
   - {fileID: 5223940251837234560}
   m_Father: {fileID: 3380412018941057676}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8146657454835930164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8009268744257515518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379eb787f5ea4cc438107b03e2beb768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &8039130048693617095
 GameObject:
   m_ObjectHideFlags: 0

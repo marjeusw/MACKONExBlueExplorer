@@ -124,21 +124,33 @@ public class RaycastGazeInteractor : MonoBehaviour
             Mathf.Infinity
             );
 
-        GameObject activeRevealObject = null;
+        //smol edit to make it work in prefab -> finds frame thats looked at
+        FrameReveal activeFrame = null;
+
+        //GameObject activeRevealObject = null;
 
         if (hitSomething)
         {
-            // Check whether the hit belongs to one of our picture frames
-            foreach (PhotoFrames frame in photoFrames)
-            {
-                if (frame.photoFrame != null &&
-                    (hit.collider.transform == frame.photoFrame.transform ||
-                     hit.collider.transform.IsChildOf(frame.photoFrame.transform)))
-                {
-                    activeRevealObject = frame.photoText;
-                    break;
-                }
-            }
+            //// Check whether the hit belongs to one of our picture frames
+            //foreach (PhotoFrames frame in photoFrames)
+            //{
+            //    if (frame.photoFrame != null &&
+            //        (hit.collider.transform == frame.photoFrame.transform ||
+            //         hit.collider.transform.IsChildOf(frame.photoFrame.transform)))
+            //    {
+            //        activeRevealObject = frame.photoText;
+            //        break;
+            //    }
+            //}
+            activeFrame = hit.collider.GetComponentInParent<FrameReveal>();
+        }
+
+        //FrameReveal[] allFrames = FindObjectsByType<FrameReveal>(FindObjectsSortMode.None);
+        FrameReveal[] allFrames = FindObjectsByType<FrameReveal>();
+
+        foreach (FrameReveal frame in allFrames)
+        {
+            frame.SetVisible(frame == activeFrame);
         }
 
         /*
@@ -154,21 +166,21 @@ public class RaycastGazeInteractor : MonoBehaviour
         }
         */
 
-        foreach (PhotoFrames frame in photoFrames)
-        {
-            if (frame.photoText != null)
-            {
-                TMPFade fade =
-                    frame.photoText.GetComponent<TMPFade>();
+        //foreach (PhotoFrames frame in photoFrames)
+        //{
+        //    if (frame.photoText != null)
+        //    {
+        //        TMPFade fade =
+        //            frame.photoText.GetComponent<TMPFade>();
 
-                if (fade != null)
-                {
-                    fade.SetVisible(
-                        frame.photoText == activeRevealObject
-                    );
-                }
-            }
-        }
+        //        if (fade != null)
+        //        {
+        //            fade.SetVisible(
+        //                frame.photoText == activeRevealObject
+        //            );
+        //        }
+        //    }
+        //}
     }
 
 }
