@@ -1740,6 +1740,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 4.89
       objectReference: {fileID: 0}
+    - target: {fileID: 5397952581704065356, guid: ecd06bf6c48629547b9eab0ed8c8c013, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c8a952998ab4c2429ed2ff845e1cd81, type: 2}
     - target: {fileID: 5565826911625523895, guid: ecd06bf6c48629547b9eab0ed8c8c013, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -8074,6 +8078,10 @@ PrefabInstance:
       propertyPath: windowAudio
       value: 
       objectReference: {fileID: 1206082528}
+    - target: {fileID: 7644003678517689071, guid: 866dec228bb10ed44a8fe6a34ca918fc, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c8a952998ab4c2429ed2ff845e1cd81, type: 2}
     - target: {fileID: 7847639039906850501, guid: 866dec228bb10ed44a8fe6a34ca918fc, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -14303,6 +14311,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4180507020868692628, guid: a893c1c9e62620c409d20323100e9473, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c8a952998ab4c2429ed2ff845e1cd81, type: 2}
     - target: {fileID: 5340457713072322917, guid: a893c1c9e62620c409d20323100e9473, type: 3}
       propertyPath: m_Name
       value: MackMagic
@@ -27147,6 +27159,10 @@ PrefabInstance:
       propertyPath: m_Resource
       value: 
       objectReference: {fileID: 8300000, guid: bae34bc0726c62e4ca4940e297d29f25, type: 3}
+    - target: {fileID: 2529392052269736662, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c8a952998ab4c2429ed2ff845e1cd81, type: 2}
     - target: {fileID: 3556605021154920835, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
       propertyPath: m_IsActive
       value: 1
