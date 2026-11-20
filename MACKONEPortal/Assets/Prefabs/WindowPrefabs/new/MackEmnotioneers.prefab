@@ -3131,7 +3131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2054603404022794187
 Transform:
   m_ObjectHideFlags: 0
@@ -17219,10 +17219,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2054603404022794187}
     m_Modifications:
-    - target: {fileID: 798717321244150634, guid: 72c4f7e406851b4498dc8a18125e2a31, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5636643435164865830, guid: 72c4f7e406851b4498dc8a18125e2a31, type: 3}
       propertyPath: m_Name
       value: MackEmotioneersSpline
