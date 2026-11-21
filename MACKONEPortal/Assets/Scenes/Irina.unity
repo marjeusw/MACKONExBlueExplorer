@@ -225,7 +225,7 @@ Transform:
   m_GameObject: {fileID: 636380}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.77, y: 1.482, z: -0.53}
+  m_LocalPosition: {x: 2.66, y: 0.55, z: -0.53}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3062,7 +3062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &335198111
 Transform:
   m_ObjectHideFlags: 0
@@ -3274,7 +3274,7 @@ Transform:
   m_GameObject: {fileID: 346647342}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.85, y: 1.33, z: -2.147}
+  m_LocalPosition: {x: 3.85, y: 1.241, z: -2.147}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -7307,7 +7307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 59867093635628c41b9ddef7db232378, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.69623053
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 59867093635628c41b9ddef7db232378, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9086,7 +9086,7 @@ Transform:
   m_GameObject: {fileID: 800358465}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.07, y: 4.86, z: -1.938}
+  m_LocalPosition: {x: 1.854, y: 4.86, z: -1.938}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -14422,7 +14422,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060798035}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -14481,7 +14481,7 @@ Transform:
   m_GameObject: {fileID: 1060798035}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.77, y: -0.6, z: -2.63}
+  m_LocalPosition: {x: 3.15, y: -0.6, z: -2.63}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -17520,7 +17520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 59867093635628c41b9ddef7db232378, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.94984
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 59867093635628c41b9ddef7db232378, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22154,7 +22154,7 @@ Transform:
   m_GameObject: {fileID: 1720736978}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.953, y: 2.379, z: -1.428}
+  m_LocalPosition: {x: 3.549, y: 1.82, z: -1.428}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -25851,7 +25851,7 @@ Transform:
   m_GameObject: {fileID: 2014140174}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.458, y: 0.343, z: -0.61}
+  m_LocalPosition: {x: 3.458, y: 0.343, z: -1.367}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -27286,6 +27286,14 @@ PrefabInstance:
     - target: {fileID: 3848260121387882696, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       propertyPath: m_Name
       value: Rollercoaster_new
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252088239187356800, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
+      propertyPath: m_Friction
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252088239187356800, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7681836574461405994, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       propertyPath: m_LocalPosition.x
