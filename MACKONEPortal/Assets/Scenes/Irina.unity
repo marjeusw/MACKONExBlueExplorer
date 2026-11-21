@@ -8078,6 +8078,10 @@ PrefabInstance:
       propertyPath: windowAudio
       value: 
       objectReference: {fileID: 1206082528}
+    - target: {fileID: 7574657916132732838, guid: 866dec228bb10ed44a8fe6a34ca918fc, type: 3}
+      propertyPath: m_MaxSpeed
+      value: 0.8208574
+      objectReference: {fileID: 0}
     - target: {fileID: 7644003678517689071, guid: 866dec228bb10ed44a8fe6a34ca918fc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -27249,6 +27253,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8230066741098644958, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
+      propertyPath: m_MaxSpeed
+      value: 0.7110563
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27294,6 +27302,10 @@ PrefabInstance:
     - target: {fileID: 5252088239187356800, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       propertyPath: m_UpdateMode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252088239187356800, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
+      propertyPath: m_UpdateRate
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 7681836574461405994, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       propertyPath: m_LocalPosition.x
