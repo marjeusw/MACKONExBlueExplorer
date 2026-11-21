@@ -1010,6 +1010,57 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "MACKONECTRL",
+            "id": "8c30a1e2-f5be-451a-b3c0-5ce950f84345",
+            "actions": [
+                {
+                    "name": "RESET",
+                    "type": "Button",
+                    "id": "c4fcbaca-5b65-4426-8785-874dd2b46ca1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bbb6dc71-2f20-41c3-9d13-9302c4ec440c",
+                    "path": "<XRController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RESET",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "27e45061-56e1-476d-af18-c05f80e6f6a5",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RESET",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9ba9427-0f42-4dbf-80eb-ced8c5590fe2",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RESET",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

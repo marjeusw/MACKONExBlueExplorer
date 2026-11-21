@@ -12,7 +12,8 @@ public class DoorGazeBehaviour : MonoBehaviour
 
     public bool isClosed = true;
     public float secondsUntilDoorClose = 0.0f;
-    public GameObject light;
+    public GameObject lightParent; //where the script is on
+    public GameObject light; //this one can be turned off and on just fine
     private bool lightsShutter = true;
 
     private bool hasEverOpened = false; //to check if a window was opened before for the final crack setup
@@ -101,9 +102,9 @@ public class DoorGazeBehaviour : MonoBehaviour
             studioLoader.OnWindowFirstOpened(); //handing it to studio loader since its prefab no work stuff again (gotta use the proxy so object manager can access)
         }
 
-        if (lightsShutter && light != null)
+        if (lightsShutter && lightParent != null)
         {
-            GlowScript glow = light.GetComponent<GlowScript>();
+            GlowScript glow = lightParent.GetComponent<GlowScript>();
 
             if (glow != null)
             {
@@ -112,7 +113,7 @@ public class DoorGazeBehaviour : MonoBehaviour
             }
             else
             {
-                Debug.LogError("no GlowScript found on " + light.name);
+                Debug.LogError("no GlowScript found on " + lightParent.name);
             }
         }
         else //for when the glow isn't there anymore
@@ -182,6 +183,50 @@ public class DoorGazeBehaviour : MonoBehaviour
         if (studioLoader != null)
         {
             studioLoader.OnDoorClosed(); //notifies StudioLoader
+        }
+    }
+
+    public void ResetWindowState()
+    {
+        StopAllCoroutines(); //no delayed animations and stuffs
+
+        //resets window logic
+        isClosed = true;
+        secondsUntilDoorClose = 0f;
+        lightsShutter = true;
+        hasEverOpened = false;
+
+        currentlyOpenDoor = null; //even if door currently open while resetting, after pressing doesn't remember it
+
+        //resets animator
+        foreach (Animator animator in animators)
+        {
+            if (animator != null) //just a check so no errors when missing ref
+            {
+                animator.SetBool("IsOpen", false);
+                animator.Play("new_ShuttersIdle", 0, 0f); //NEEDS NAME OF THE ANIMATION but snaps it directly to idle
+                animator.Update(0f); //tells animator to evaluate immediately instead of waiting for next frame (hopefully fixes the window staying open after reset)
+            }
+        }
+
+        //turns glow back on
+        if (lightParent != null)
+        {
+            GlowScript glow = lightParent.GetComponent<GlowScript>();
+
+            if (glow != null)
+            {
+                glow.ResetGlow();
+                
+            }
+
+            light.SetActive(true);
+        }
+
+        //also gotta reset studioloader
+        if (studioLoader != null)
+        {
+            studioLoader.ResetLoaderState();
         }
     }
 

@@ -40,7 +40,17 @@ public class StudioLoader : MonoBehaviour
        //the meat of the stuff (just calling the function in object manager)
         objectManager.RegisterStudio(studioNumber, studioObject, windowAudio);
 
+        //same for the windows (for reset button)
+        objectManager.RegisterWindow(doorBehaviour);
     
+    }
+
+    //for the reset button
+    public void ResetLoaderState()
+    {
+        openingSoundPlayed = false;
+        StopAllCoroutines();
+        //no delayed sound playing after pressing reset
     }
 
     public void ActivateStudio()

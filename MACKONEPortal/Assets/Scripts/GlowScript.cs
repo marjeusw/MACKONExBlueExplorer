@@ -4,6 +4,7 @@ using UnityEngine;
 public class GlowScript : MonoBehaviour
 {
     private Renderer rend;
+    public GameObject light;
 
    
 
@@ -13,7 +14,7 @@ public class GlowScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rend = GetComponent<Renderer>();
+        rend = light.GetComponent<Renderer>();
         StartCoroutine(FadeLoop());
     }
 
@@ -76,5 +77,16 @@ public class GlowScript : MonoBehaviour
         rend.material.color = color;
     }
 
+    //for the reset button so that glow goes back to non transparent
+    public void ResetGlow()
+    {
+        StopAllCoroutines();
+
+        Color color = rend.material.color;
+        color.a = 1f; //fully opaque
+        rend.material.color = color;
+
+        StartCoroutine(FadeLoop()); //gotta start it again since it doesn't start through void start anymore after the reset
+    }
 
 }

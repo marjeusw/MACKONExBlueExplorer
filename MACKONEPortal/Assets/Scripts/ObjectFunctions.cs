@@ -4,6 +4,7 @@
 using JetBrains.Annotations;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 public class ObjectFunctions : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class ObjectFunctions : MonoBehaviour
     private int openedWindowCount = 0;
     private bool firstOpenObjectActivated = false; //for the coroutine
 
+    private List<DoorGazeBehaviour> allWindows = new List<DoorGazeBehaviour>(); //for reset button
+
     public AudioSource audio1;
     public AudioSource audio2;
     public AudioSource audio3;
@@ -30,6 +33,14 @@ public class ObjectFunctions : MonoBehaviour
     public GameObject Studio4;
 
 
+    //registers the windows for the reset button (same idea as the registerstudio to get the reference of each window)
+    public void RegisterWindow(DoorGazeBehaviour door)
+    {
+        if (door != null && !allWindows.Contains(door))
+            {
+                allWindows.Add(door);
+            }
+    }
 
     //stores refs to all 4 studios and their audio (since after being instantiated, prefabs forgor all references that aren't in the prefab so studios gotta be reffed like dis)
     public void RegisterStudio(int studioNumber, GameObject studio, AudioSource windowAudio)
@@ -253,5 +264,43 @@ public class ObjectFunctions : MonoBehaviour
 
     //}
 
+
+    //reset TOIMEEE
+    public void ResetEverything() //cept the window pos of course
+    {
+        Debug.Log("resetting everything");
+
+        //studio switching reset
+        windowIsOpen = false;
+        openStudioNumber = -1;
+        currentStudio = 1;
+
+        //all studios turn off
+        if (Studio1 != null) Studio1.SetActive(false);
+        if (Studio2 != null) Studio2.SetActive(false);
+        if (Studio3 != null) Studio3.SetActive(false);
+        if (Studio4 != null) Studio4.SetActive(false);
+
+        //progress of opening windows reset
+        windowsOpened = new bool[4];
+        openedWindowCount = 0;
+        firstOpenObjectActivated = false;
+
+        //first open object (CRACKS) tunred off
+        if (firstOpenObject != null)
+        {
+            firstOpenObject.SetActive(false);
+        }
+
+        //RESET all windows
+        foreach (DoorGazeBehaviour door in allWindows)
+        {
+            if (door !!= null)
+            {
+                door.ResetWindowState();
+            }
+        }
+        Debug.Log("Everythings Resettt");
+    }
 
 }
