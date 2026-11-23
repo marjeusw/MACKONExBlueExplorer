@@ -94,7 +94,7 @@ public class DoorGazeBehaviour : MonoBehaviour
         currentlyOpenDoor = this;
 
         isClosed = false;
-        secondsUntilDoorClose = 5.0f; //until when door closes
+        secondsUntilDoorClose = 13.0f; //until when door closes
 
         if (!hasEverOpened) //happens only after window is allowed to open (so before its unlocked after the return functions above this function won't work)
         {
