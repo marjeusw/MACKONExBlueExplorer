@@ -8320,6 +8320,7 @@ MonoBehaviour:
   secondsUntilDoorClose: 0
   lightParent: {fileID: 2051120308429335045}
   light: {fileID: 2167192512974031748}
+  windowTime: 13
 --- !u!114 &2137722797653916106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8418,7 +8419,7 @@ MonoBehaviour:
   studioNumber: 3
   studioObject: {fileID: 7871846783316388729}
   windowAudio: {fileID: 8587497315201525411}
-  closingSoundDelay: 1.5
+  closingSoundDelay: 0
 --- !u!82 &8587497315201525411
 AudioSource:
   m_ObjectHideFlags: 0

@@ -6494,6 +6494,10 @@ PrefabInstance:
       propertyPath: windowAudio
       value: 
       objectReference: {fileID: 1206082528}
+    - target: {fileID: 7003632812020824838, guid: 866dec228bb10ed44a8fe6a34ca918fc, type: 3}
+      propertyPath: closingSoundDelay
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7574657916132732838, guid: 866dec228bb10ed44a8fe6a34ca918fc, type: 3}
       propertyPath: m_MaxSpeed
       value: 0.87472045
