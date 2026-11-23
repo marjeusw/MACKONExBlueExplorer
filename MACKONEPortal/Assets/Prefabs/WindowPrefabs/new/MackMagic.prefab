@@ -3604,7 +3604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &839514864577568209
 Transform:
   m_ObjectHideFlags: 0
@@ -16563,10 +16563,6 @@ PrefabInstance:
     - target: {fileID: 3586201200467107122, guid: 6f9b68d295de8e44ebb4940576c234ca, type: 3}
       propertyPath: m_Splines.Array.data[0].m_Knots.Array.data[1].Rotation.value.z
       value: -0.09875193
-      objectReference: {fileID: 0}
-    - target: {fileID: 6342581400474926813, guid: 6f9b68d295de8e44ebb4940576c234ca, type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6708231591123198160, guid: 6f9b68d295de8e44ebb4940576c234ca, type: 3}
       propertyPath: m_LocalPosition.x
