@@ -1,25 +1,18 @@
-Shader "Custom/PortalStencilMask"
+Shader "Custom/PortalDepthMask"
 {
     SubShader
     {
         Tags
         {
             "RenderType" = "Opaque"
-            "Queue" = "Geometry"
+            "Queue" = "Geometry-1" // Renders BEFORE the falling object
         }
 
         Pass
         {
-            ZWrite Off
-            ZTest LEqual
-            ColorMask 0
-
-            Stencil
-            {
-                Ref 2
-                Comp Always
-                Pass Replace
-            }
+            ZWrite On       // Writes the portal's depth into the depth buffer
+            ZTest LEqual    // Respects walls/objects in front of the portal
+            ColorMask 0     // Draws zero color (completely invisible!)
         }
     }
 }
