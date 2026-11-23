@@ -20602,7 +20602,7 @@ Transform:
   m_GameObject: {fileID: 1910789930}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.47226393, z: -0, w: 0.8814572}
-  m_LocalPosition: {x: 5.3, y: 5.08, z: 4.11}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23586,6 +23586,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1063482424588171900, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.012
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063482424588171900, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.077
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063482424588171900, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 1393105808085358368, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -23598,6 +23610,10 @@ PrefabInstance:
       propertyPath: m_Resource
       value: 
       objectReference: {fileID: 8300000, guid: bae34bc0726c62e4ca4940e297d29f25, type: 3}
+    - target: {fileID: 2448629117716649543, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2529392052269736662, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -23611,8 +23627,12 @@ PrefabInstance:
       value: MackNext
       objectReference: {fileID: 0}
     - target: {fileID: 5068666524886340780, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068666524886340780, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5113685611723341555, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
       propertyPath: windowAudio
