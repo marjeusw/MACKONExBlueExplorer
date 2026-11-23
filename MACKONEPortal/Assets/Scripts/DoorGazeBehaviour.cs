@@ -16,6 +16,8 @@ public class DoorGazeBehaviour : MonoBehaviour
     public GameObject light; //this one can be turned off and on just fine
     private bool lightsShutter = true;
 
+    [SerializeField] private float windowTime = 13.0f;
+
     private bool hasEverOpened = false; //to check if a window was opened before for the final crack setup
 
     private static DoorGazeBehaviour currentlyOpenDoor; //variable shared by all instances of the scripts to keep track of the opened doors 
@@ -94,7 +96,7 @@ public class DoorGazeBehaviour : MonoBehaviour
         currentlyOpenDoor = this;
 
         isClosed = false;
-        secondsUntilDoorClose = 13.0f; //until when door closes
+        secondsUntilDoorClose = windowTime; //until when door closes
 
         if (!hasEverOpened) //happens only after window is allowed to open (so before its unlocked after the return functions above this function won't work)
         {
