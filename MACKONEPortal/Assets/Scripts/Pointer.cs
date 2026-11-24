@@ -32,7 +32,7 @@ public class Pointer : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private SplineAnimate splineAnimate;
-    [SerializeField] private SplineExtrude splineExtrude;
+    [SerializeField] private SplineInstantiate splineInstantiate;
 
     [Header("Initialisation")]
     [SerializeField] private float initialDelay = 1f;
@@ -123,9 +123,9 @@ public class Pointer : MonoBehaviour
         }
 
         // Enable spline visualisation.
-        if (splineExtrude != null)
+        if (splineInstantiate != null)
         {
-            splineExtrude.enabled = true;
+            splineInstantiate.enabled = true;
         }
 
         // Enable animation after spline generation.
