@@ -15273,11 +15273,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742087367579885294, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       propertyPath: m_Duration
-      value: 25
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1742087367579885294, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       propertyPath: m_MaxSpeed
-      value: 0.7852639
+      value: 2.804514
       objectReference: {fileID: 0}
     - target: {fileID: 3255707089801141054, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       propertyPath: m_Layer
@@ -15306,6 +15306,10 @@ PrefabInstance:
     - target: {fileID: 5199020134057541644, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252088239187356800, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
+      propertyPath: m_Friction
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5434533297251641354, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       propertyPath: m_Layer
@@ -15337,7 +15341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7681836574461405994, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.19199991
+      value: 0.192
       objectReference: {fileID: 0}
     - target: {fileID: 7681836574461405994, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -16596,6 +16600,10 @@ PrefabInstance:
     - target: {fileID: 1088775750990077323, guid: 6f9b68d295de8e44ebb4940576c234ca, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.00000017385
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838761633018509901, guid: 6f9b68d295de8e44ebb4940576c234ca, type: 3}
+      propertyPath: m_Radius
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2122591021103095672, guid: 6f9b68d295de8e44ebb4940576c234ca, type: 3}
       propertyPath: m_Layer

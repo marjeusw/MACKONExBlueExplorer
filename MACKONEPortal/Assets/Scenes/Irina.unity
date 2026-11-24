@@ -6582,7 +6582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7574657916132732838, guid: 866dec228bb10ed44a8fe6a34ca918fc, type: 3}
       propertyPath: m_MaxSpeed
-      value: 0.87472045
+      value: 3.1076148
       objectReference: {fileID: 0}
     - target: {fileID: 7644003678517689071, guid: 866dec228bb10ed44a8fe6a34ca918fc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -11420,7 +11420,7 @@ MonoBehaviour:
   m_Sides: 8
   m_SegmentsPerUnit: 4
   m_Capped: 0
-  m_Radius: 0.3
+  m_Radius: 0.4
   m_Range: {x: 0, y: 1}
   m_FlipNormals: 0
   m_Shape:
@@ -12485,6 +12485,10 @@ PrefabInstance:
     - target: {fileID: 5340457713072322917, guid: a893c1c9e62620c409d20323100e9473, type: 3}
       propertyPath: m_Name
       value: MackMagic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694725224803083003, guid: a893c1c9e62620c409d20323100e9473, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.19199991
       objectReference: {fileID: 0}
     - target: {fileID: 7148787032844743810, guid: a893c1c9e62620c409d20323100e9473, type: 3}
       propertyPath: m_IsActive
@@ -23851,7 +23855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8230066741098644958, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
       propertyPath: m_MaxSpeed
-      value: 0.6734992
+      value: 2.4053543
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23905,7 +23909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742087367579885294, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       propertyPath: m_Duration
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1742087367579885294, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       propertyPath: m_PlayOnAwake
