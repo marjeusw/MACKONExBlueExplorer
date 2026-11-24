@@ -13,8 +13,9 @@ public class RollerCoasterTrigger : MonoBehaviour
     //[SerializeField] private GameObject portalOneHalf;
     [SerializeField] private GameObject portalTwo;
     [SerializeField] private GameObject tracks;
+    [SerializeField] private float delayrc = 1.0f;
 
-    private void Start()
+    private void Awake()
     {
         objectManager = FindAnyObjectByType<ObjectFunctions>(); // gets the object manager ref
 
@@ -29,7 +30,7 @@ public class RollerCoasterTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void HandleChildTrigger(Collider other)
     {
         if ((PortalMaskLayer.value & (1 << other.gameObject.layer)) == 0)
             return;
@@ -45,7 +46,7 @@ public class RollerCoasterTrigger : MonoBehaviour
 
     private IEnumerator DisableCoroutine()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(delayrc);
         SetPartsActive(false);
     }
 

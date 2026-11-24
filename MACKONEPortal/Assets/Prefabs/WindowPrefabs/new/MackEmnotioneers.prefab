@@ -17823,6 +17823,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1480466337367340745, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1428755877007546826}
+    - targetCorrespondingSourceObject: {fileID: 1480466337367340745, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9035280365985127068}
   m_SourcePrefab: {fileID: 100100000, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
 --- !u!4 &1993099773361150562 stripped
 Transform:
@@ -18003,6 +18006,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0406066, y: 0.538059, z: 1}
   m_Center: {x: -0.356098, y: 0.23097034, z: 0.00000016537884}
+--- !u!114 &9035280365985127068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7329635122046453633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed863b7a0b8e7504d81451d1430fad40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerForwarder
 --- !u!1001 &8744442965356660382
 PrefabInstance:
   m_ObjectHideFlags: 0
