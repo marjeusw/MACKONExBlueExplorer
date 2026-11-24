@@ -32,14 +32,17 @@ public class ObjectFunctions : MonoBehaviour
     public GameObject Studio3;
     public GameObject Studio4;
 
-    //for the rollercoaster
+    //for the rollercoaster (final cracks)
     [SerializeField] private LayerMask PortalMaskLayer;
     [SerializeField] private GameObject rollerCoaster;
     [SerializeField] private GameObject portalOne;
-    [SerializeField] private GameObject portalOneHalf;
+    //[SerializeField] private GameObject portalOneHalf;
     [SerializeField] private GameObject portalTwo;
     [SerializeField] private GameObject tracks;
     [SerializeField] private BoxCollider rollerCoasterCollider;
+
+    //for all the others
+    private List<RollerCoasterTrigger> allRollerCoasters = new List<RollerCoasterTrigger>();
 
 
     //registers the windows for the reset button (same idea as the registerstudio to get the reference of each window)
@@ -49,6 +52,15 @@ public class ObjectFunctions : MonoBehaviour
             {
                 allWindows.Add(door);
             }
+    }
+
+    //registers all rollercoasters of the windows (besides final cracks) cause they do be prefab stuff
+    public void RegisterRollerCoaster(RollerCoasterTrigger coaster)
+    {
+        if (coaster != null && !allRollerCoasters.Contains(coaster))
+        {
+            allRollerCoasters.Add(coaster);
+        }
     }
 
     //stores refs to all 4 studios and their audio (since after being instantiated, prefabs forgor all references that aren't in the prefab so studios gotta be reffed like dis)
@@ -83,6 +95,8 @@ public class ObjectFunctions : MonoBehaviour
 
     }
 
+
+   
 
     //after receiving studio numbr, decides on the following studio and also gets the audio source from studio loader
     //public void ShowStudio(int studioNumber, AudioSource windowAudio)
@@ -256,27 +270,33 @@ public class ObjectFunctions : MonoBehaviour
         // Now disable everything
         rollerCoaster.SetActive(false);
         portalOne.SetActive(false);
-        portalOneHalf.SetActive(false);
+        //portalOneHalf.SetActive(false);
         portalTwo.SetActive(false);
         tracks.SetActive(false);
     }
     public void ResetRollerCoaster()
     {
-        StartCoroutine(ResetRollerCoasterCoroutine()); //cause otherwise it immediately despawns after colliding with the cube again
+        foreach (RollerCoasterTrigger coaster in allRollerCoasters)
+        {
+            if (coaster != null)
+            {
+                coaster.ResetThisRollerCoaster();
+            }
+        }
         
     }
 
-    private IEnumerator ResetRollerCoasterCoroutine()
-    {
-        //waits until current frame is done
-        yield return null;
+    //private IEnumerator ResetRollerCoasterCoroutine()
+    //{
+    //    //waits until current frame is done
+    //    yield return null;
 
-        rollerCoaster.SetActive(true);
-        portalOne.SetActive(true);
-        portalOneHalf.SetActive(true);
-        portalTwo.SetActive(true);
-        tracks.SetActive(true);
-    }
+    //    rollerCoaster.SetActive(true);
+    //    portalOne.SetActive(true);
+    //    portalOneHalf.SetActive(true);
+    //    portalTwo.SetActive(true);
+    //    tracks.SetActive(true);
+    //}
 
     //edit in case we want coroutined delay (didn't look gud tho so I scratched it for now (overlapping environments))
     //Delays the studio disappearing
