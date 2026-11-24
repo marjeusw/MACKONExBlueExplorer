@@ -32,6 +32,15 @@ public class ObjectFunctions : MonoBehaviour
     public GameObject Studio3;
     public GameObject Studio4;
 
+    //for the rollercoaster
+    [SerializeField] private LayerMask PortalMaskLayer;
+    [SerializeField] private GameObject rollerCoaster;
+    [SerializeField] private GameObject portalOne;
+    [SerializeField] private GameObject portalOneHalf;
+    [SerializeField] private GameObject portalTwo;
+    [SerializeField] private GameObject tracks;
+    [SerializeField] private BoxCollider rollerCoasterCollider;
+
 
     //registers the windows for the reset button (same idea as the registerstudio to get the reference of each window)
     public void RegisterWindow(DoorGazeBehaviour door)
@@ -232,6 +241,43 @@ public class ObjectFunctions : MonoBehaviour
         }
     }
 
+
+    public void DisableRollerCoaster()
+    {
+        StartCoroutine(DisableRollerCoasterCoroutine()); //to not get the error of destroying an object etc
+
+    }
+
+    private IEnumerator DisableRollerCoasterCoroutine()
+    {
+        // Wait for the roller coaster to finish its spline movement
+        yield return new WaitForSeconds(1f);
+
+        // Now disable everything
+        rollerCoaster.SetActive(false);
+        portalOne.SetActive(false);
+        portalOneHalf.SetActive(false);
+        portalTwo.SetActive(false);
+        tracks.SetActive(false);
+    }
+    public void ResetRollerCoaster()
+    {
+        StartCoroutine(ResetRollerCoasterCoroutine()); //cause otherwise it immediately despawns after colliding with the cube again
+        
+    }
+
+    private IEnumerator ResetRollerCoasterCoroutine()
+    {
+        //waits until current frame is done
+        yield return null;
+
+        rollerCoaster.SetActive(true);
+        portalOne.SetActive(true);
+        portalOneHalf.SetActive(true);
+        portalTwo.SetActive(true);
+        tracks.SetActive(true);
+    }
+
     //edit in case we want coroutined delay (didn't look gud tho so I scratched it for now (overlapping environments))
     //Delays the studio disappearing
 
@@ -295,11 +341,15 @@ public class ObjectFunctions : MonoBehaviour
         //RESET all windows
         foreach (DoorGazeBehaviour door in allWindows)
         {
-            if (door !!= null)
+            if (door != null)
             {
                 door.ResetWindowState();
             }
         }
+
+        //resets rollercoastzer
+        ResetRollerCoaster();
+
         Debug.Log("Everythings Resettt");
     }
 

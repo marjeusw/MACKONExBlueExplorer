@@ -51,6 +51,7 @@ public class StudioLoader : MonoBehaviour
         openingSoundPlayed = false;
         StopAllCoroutines();
         //no delayed sound playing after pressing reset
+        objectManager.ResetRollerCoaster(); //resets the rollercoasters
     }
 
     public void ActivateStudio()

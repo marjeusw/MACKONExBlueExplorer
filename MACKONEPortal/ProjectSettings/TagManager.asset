@@ -32,7 +32,6 @@ TagManager:
   - QDSUILineDrawing
   - QDSUIBackplate
   - QDSUIToggleCheckboxRadio
-  - Table
   - Door
   - GrandDoor
   layers:
