@@ -53,14 +53,9 @@ public class RollerCoasterTrigger : MonoBehaviour
     public void ResetThisRollerCoaster()
     {
         StopAllCoroutines();
-        StartCoroutine(ResetCoroutine());
-    }
-
-    private IEnumerator ResetCoroutine()  //cause otherwise it immediately despawns after colliding with the cube again
-    {
-        yield return null; //waits until current frame is done
         SetPartsActive(true);
     }
+
 
     private void SetPartsActive(bool state)
     {

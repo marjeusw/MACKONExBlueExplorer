@@ -941,6 +941,7 @@ MonoBehaviour:
   portalOne: {fileID: 1800538323}
   portalTwo: {fileID: 1522405201}
   tracks: {fileID: 925774986}
+  delayrc: 0.5
 --- !u!1 &125978034
 GameObject:
   m_ObjectHideFlags: 0

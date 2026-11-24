@@ -276,6 +276,14 @@ public class ObjectFunctions : MonoBehaviour
     }
     public void ResetRollerCoaster()
     {
+        StartCoroutine(ResetRollerCoasterCoroutine()); 
+        
+    }
+
+    private IEnumerator ResetRollerCoasterCoroutine() //cause otherwise it immediately despawns after colliding with the cube again
+    {
+        yield return null; //waits for current frame to be done
+
         foreach (RollerCoasterTrigger coaster in allRollerCoasters)
         {
             if (coaster != null)
@@ -283,7 +291,6 @@ public class ObjectFunctions : MonoBehaviour
                 coaster.ResetThisRollerCoaster();
             }
         }
-        
     }
 
     //private IEnumerator ResetRollerCoasterCoroutine()
