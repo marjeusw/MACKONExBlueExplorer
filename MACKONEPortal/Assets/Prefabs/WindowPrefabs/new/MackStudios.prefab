@@ -13935,11 +13935,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RollerCoasterTrigger
   PortalMaskLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   rollerCoaster: {fileID: 4853454060812131108}
   portalOne: {fileID: 8307167862644727553}
   portalTwo: {fileID: 8307167862644727553}
   tracks: {fileID: 8307167862644727553}
+  delayrc: 0.5
 --- !u!1001 &6521709519498593656
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2773,7 +2773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &335198111
 Transform:
   m_ObjectHideFlags: 0
@@ -23831,6 +23831,14 @@ PrefabInstance:
     - target: {fileID: 8230066741098644958, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
       propertyPath: m_MaxSpeed
       value: 2.4053543
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667169603984130991, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
+      propertyPath: delayrc
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667169603984130991, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
+      propertyPath: PortalMaskLayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

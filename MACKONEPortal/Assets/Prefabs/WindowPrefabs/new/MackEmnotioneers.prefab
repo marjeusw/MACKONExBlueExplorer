@@ -17851,11 +17851,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RollerCoasterTrigger
   PortalMaskLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   rollerCoaster: {fileID: 7329635122046453633}
   portalOne: {fileID: 2105542331217348423}
   portalTwo: {fileID: 2105542331217348423}
   tracks: {fileID: 2105542331217348423}
+  delayrc: 0.5
 --- !u!1 &7329635122046453633 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1480466337367340745, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
