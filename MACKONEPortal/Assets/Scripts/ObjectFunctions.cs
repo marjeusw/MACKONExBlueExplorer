@@ -15,6 +15,8 @@ public class ObjectFunctions : MonoBehaviour
     private int currentStudio = 1;
 
     [SerializeField] private GameObject firstOpenObject;
+    [SerializeField] private float finalCracksDelay = 7f;
+    private Coroutine finalCracksCoroutine; //so the final cracks tunring back on is not dependent on the glow anymore
 
     private bool[] windowsOpened = new bool[4]; //for all 4 windows to track for crack
     private int openedWindowCount = 0;
@@ -31,15 +33,6 @@ public class ObjectFunctions : MonoBehaviour
     public GameObject Studio2;
     public GameObject Studio3;
     public GameObject Studio4;
-
-    //for the rollercoaster (final cracks)
-    [SerializeField] private LayerMask PortalMaskLayer;
-    [SerializeField] private GameObject rollerCoaster;
-    [SerializeField] private GameObject portalOne;
-    //[SerializeField] private GameObject portalOneHalf;
-    [SerializeField] private GameObject portalTwo;
-    [SerializeField] private GameObject tracks;
-    [SerializeField] private BoxCollider rollerCoasterCollider;
 
     //for all the others
     private List<RollerCoasterTrigger> allRollerCoasters = new List<RollerCoasterTrigger>();
@@ -232,6 +225,10 @@ public class ObjectFunctions : MonoBehaviour
             openedWindowCount++;
 
             //Debug.Log("Window " + studioNumber + " opened for the first time! Total: " + openedWindowCount);
+            if (openedWindowCount >= 4 && !firstOpenObjectActivated && finalCracksCoroutine == null)
+            {
+                finalCracksCoroutine = StartCoroutine(ActivateFirstOpenObjectDelayed());
+            }
         }
 
         //activates object only after all four windows have been opened
@@ -244,36 +241,36 @@ public class ObjectFunctions : MonoBehaviour
         
     }
 
-    public void TryActivateFirstOpenObject()
+    private IEnumerator ActivateFirstOpenObjectDelayed()
     {
-        if (openedWindowCount >= 4 && !firstOpenObjectActivated)
+        yield return new WaitForSeconds(finalCracksDelay);
+
+        if (firstOpenObject != null)
         {
             firstOpenObject.SetActive(true);
-            firstOpenObjectActivated = true;
-
-            Debug.Log("All windows have been opened after glow finished wee");
         }
+
+        firstOpenObjectActivated = true;
+        finalCracksCoroutine = null;
+
+        Debug.Log("cracks show up wee");
     }
 
+    //public void TryActivateFirstOpenObject()
+    //{
+    //    if (openedWindowCount >= 4 && !firstOpenObjectActivated)
+    //    {
+    //        firstOpenObject.SetActive(true);
+    //        firstOpenObjectActivated = true;
 
-    public void DisableRollerCoaster()
-    {
-        StartCoroutine(DisableRollerCoasterCoroutine()); //to not get the error of destroying an object etc
+    //        Debug.Log("All windows have been opened after glow finished wee");
+    //    }
+    //}
 
-    }
 
-    private IEnumerator DisableRollerCoasterCoroutine()
-    {
-        // Wait for the roller coaster to finish its spline movement
-        yield return new WaitForSeconds(1f);
+   
 
-        // Now disable everything
-        rollerCoaster.SetActive(false);
-        portalOne.SetActive(false);
-        //portalOneHalf.SetActive(false);
-        portalTwo.SetActive(false);
-        tracks.SetActive(false);
-    }
+  
     public void ResetRollerCoaster()
     {
         StartCoroutine(ResetRollerCoasterCoroutine()); 
@@ -357,6 +354,13 @@ public class ObjectFunctions : MonoBehaviour
         //progress of opening windows reset
         windowsOpened = new bool[4];
         openedWindowCount = 0;
+
+        if (finalCracksCoroutine != null)
+        {
+            StopCoroutine(finalCracksCoroutine);
+            finalCracksCoroutine = null;
+        }
+
         firstOpenObjectActivated = false;
 
         //first open object (CRACKS) tunred off

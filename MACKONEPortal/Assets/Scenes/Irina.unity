@@ -17609,6 +17609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectFunctions
   firstOpenObject: {fileID: 335198110}
+  finalCracksDelay: 12
   audio1: {fileID: 0}
   audio2: {fileID: 0}
   audio3: {fileID: 0}
@@ -17617,14 +17618,6 @@ MonoBehaviour:
   Studio2: {fileID: 0}
   Studio3: {fileID: 0}
   Studio4: {fileID: 0}
-  PortalMaskLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  rollerCoaster: {fileID: 95586948}
-  portalOne: {fileID: 1872700832}
-  portalTwo: {fileID: 1800538323}
-  tracks: {fileID: 925774986}
-  rollerCoasterCollider: {fileID: 0}
 --- !u!1 &1659202445
 GameObject:
   m_ObjectHideFlags: 0
@@ -20359,11 +20352,6 @@ MonoBehaviour:
   installationRoutineCheckpoint:
     _installationRoutineId: 
     _installationVariants: []
---- !u!1 &1872700832 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 59867093635628c41b9ddef7db232378, type: 3}
-  m_PrefabInstance: {fileID: 689023498}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1879622029
 GameObject:
   m_ObjectHideFlags: 0

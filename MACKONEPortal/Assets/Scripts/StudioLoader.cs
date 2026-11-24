@@ -107,11 +107,11 @@ public class StudioLoader : MonoBehaviour
         }
     }
 
-    public void OnGlowFinished()
-    {
-        if (objectManager != null)
-        {
-            objectManager.TryActivateFirstOpenObject();
-        }
-    }
+    //public void OnGlowFinished() //no longer needed since cracks just wait for coroutine to end
+    //{
+    //    if (objectManager != null)
+    //    {
+    //        objectManager.TryActivateFirstOpenObject();
+    //    }
+    //}
 }

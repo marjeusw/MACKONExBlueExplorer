@@ -142,7 +142,7 @@ public class DoorGazeBehaviour : MonoBehaviour
         light.SetActive(false);
 
         //activates crack object after glow disappears
-        studioLoader.OnGlowFinished();
+        //studioLoader.OnGlowFinished(); no longer needed since now we just wait for coroutine
 
         foreach (Animator animator in animators) //makes it so that either 1 or multiple animators in children or on object itself get played
         {
