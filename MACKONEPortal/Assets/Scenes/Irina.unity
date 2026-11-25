@@ -17609,7 +17609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectFunctions
   firstOpenObject: {fileID: 335198110}
-  finalCracksDelay: 12
+  finalCracksDelay: 16
   audio1: {fileID: 0}
   audio2: {fileID: 0}
   audio3: {fileID: 0}
@@ -17618,6 +17618,11 @@ MonoBehaviour:
   Studio2: {fileID: 0}
   Studio3: {fileID: 0}
   Studio4: {fileID: 0}
+  rcObject1: {fileID: 0}
+  rcObject2: {fileID: 0}
+  rcObject3: {fileID: 0}
+  rcObject4: {fileID: 0}
+  rcDelay: 7
 --- !u!1 &1659202445
 GameObject:
   m_ObjectHideFlags: 0

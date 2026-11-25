@@ -4519,6 +4519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StudioLoader
   studioNumber: 4
   studioObject: {fileID: 5567976879846119525}
+  rollerCoasterObject: {fileID: 6880925266539578360}
   windowAudio: {fileID: 2255609932734274476}
   closingSoundDelay: 0
 --- !u!82 &2255609932734274476
@@ -11875,6 +11876,10 @@ PrefabInstance:
     - target: {fileID: 3848260121387882696, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848260121387882696, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4365570314243758204, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       propertyPath: m_Layer

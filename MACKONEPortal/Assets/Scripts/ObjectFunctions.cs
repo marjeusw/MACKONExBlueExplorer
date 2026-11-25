@@ -34,7 +34,16 @@ public class ObjectFunctions : MonoBehaviour
     public GameObject Studio3;
     public GameObject Studio4;
 
-    //for all the others
+    public GameObject rcObject1; //roller coaster objects to turn on for animation after coroutine
+    public GameObject rcObject2;
+    public GameObject rcObject3;
+    public GameObject rcObject4;
+
+    [SerializeField] private float rcDelay = 7.0f;
+
+    private Coroutine rcDelayCoroutine; //for tracking the coroutine for stopping it when resetting
+
+    //for the rollercoasters to trigger
     private List<RollerCoasterTrigger> allRollerCoasters = new List<RollerCoasterTrigger>();
 
 
@@ -57,28 +66,32 @@ public class ObjectFunctions : MonoBehaviour
     }
 
     //stores refs to all 4 studios and their audio (since after being instantiated, prefabs forgor all references that aren't in the prefab so studios gotta be reffed like dis)
-    public void RegisterStudio(int studioNumber, GameObject studio, AudioSource windowAudio)
+    public void RegisterStudio(int studioNumber, GameObject studio, GameObject rollerCoasterObject, AudioSource windowAudio)
     {
         switch (studioNumber)
         {
             case 1:
                 Studio1 = studio;
                 audio1 = windowAudio;
+                rcObject1 = rollerCoasterObject;
                 break;
 
             case 2:
                 Studio2 = studio;
                 audio2 = windowAudio;
+                rcObject2 = rollerCoasterObject;
                 break;
 
             case 3:
                 Studio3 = studio;
                 audio3 = windowAudio;
+                rcObject3 = rollerCoasterObject;
                 break;
 
             case 4:
                 Studio4 = studio;
                 audio4 = windowAudio;
+                rcObject4 = rollerCoasterObject;
                 break;
 
             default:
@@ -91,45 +104,7 @@ public class ObjectFunctions : MonoBehaviour
 
    
 
-    //after receiving studio numbr, decides on the following studio and also gets the audio source from studio loader
-    //public void ShowStudio(int studioNumber, AudioSource windowAudio)
-    //{
-    //    //turns off all studios first
-    //    if (Studio1 != null) Studio1.SetActive(false);
-    //    if (Studio2 != null) Studio2.SetActive(false);
-    //    if (Studio3 != null) Studio3.SetActive(false);
-    //    if (Studio4 != null) Studio4.SetActive(false);
-
-    //    //plays audio from audio source
-    //    if (windowAudio != null)
-    //    {
-    //        windowAudio.Play();
-    //    }
-
-    //    //turns on selected studio
-    //    switch (studioNumber)
-    //    {
-    //        case 1:
-    //            if (Studio1 != null) Studio1.SetActive(true);
-
-    //            break;
-    //        case 2:
-    //            if (Studio2 != null) Studio2.SetActive(true);
-
-    //            break;
-    //        case 3:
-    //            if (Studio3 != null) Studio3.SetActive(true);
-
-    //            break;
-    //        case 4:
-    //            if (Studio4 != null) Studio4.SetActive(true);
-
-    //            break;
-    //        default:
-    //            Debug.LogWarning("Invalid studio numbrr: " + studioNumber);
-    //            break;
-    //    }
-    //}
+    
 
 
     public void ShowStudio(int studioNumber, AudioSource windowAudio)
@@ -139,6 +114,11 @@ public class ObjectFunctions : MonoBehaviour
         {
             return;
         }
+        //stops roollercoaster coroutine
+        if (rcDelayCoroutine != null)
+        {
+            StopCoroutine(rcDelayCoroutine);
+        }
 
         //locks studio switching until window closes
         windowIsOpen = true;
@@ -147,11 +127,7 @@ public class ObjectFunctions : MonoBehaviour
         //remembers which studio was last
         int previousStudio = currentStudio;
 
-        //plays audio from audio source
-        //if (windowAudio != null)
-        //{
-        //    windowAudio.Play();
-        //}
+        
         if (windowAudio != null)
         {
             //Debug.Log("[ObjectFunctions] OPENING AUDIO: " + windowAudio.name + " | Parent: " + windowAudio.transform.parent.name + " | Position: " + windowAudio.transform.position);
@@ -170,19 +146,21 @@ public class ObjectFunctions : MonoBehaviour
         {
             case 1:
                 if (Studio1 != null) Studio1.SetActive(true);
+                //startcoroutine for rollercoasterobj
+                rcDelayCoroutine = StartCoroutine(RollerCoasterDelay(rcObject1));
 
                 break;
             case 2:
                 if (Studio2 != null) Studio2.SetActive(true);
-
+                rcDelayCoroutine = StartCoroutine(RollerCoasterDelay(rcObject2));
                 break;
             case 3:
                 if (Studio3 != null) Studio3.SetActive(true);
-
+                rcDelayCoroutine = StartCoroutine(RollerCoasterDelay(rcObject3)); //calling the coroutine and also making rcDelayCoroutine not null (for ref in reset function)
                 break;
             case 4:
                 if (Studio4 != null) Studio4.SetActive(true);
-
+                rcDelayCoroutine = StartCoroutine(RollerCoasterDelay(rcObject4));
                 break;
             default:
                 Debug.LogWarning("Invalid studio numbrr: " + studioNumber);
@@ -256,6 +234,22 @@ public class ObjectFunctions : MonoBehaviour
         Debug.Log("cracks show up wee");
     }
 
+    private IEnumerator RollerCoasterDelay(GameObject targetRcObject) //to turn on the rollercoaster after delay so it starts movin
+    {
+
+        if (targetRcObject == null) yield break;
+        
+        //gotta turn it off at the start just in case
+        targetRcObject.SetActive(false);
+
+        yield return new WaitForSeconds(rcDelay);
+
+        targetRcObject.SetActive(true);
+        Debug.Log("rc goin after" + rcDelay + "secs");
+        
+
+    }
+
     //public void TryActivateFirstOpenObject()
     //{
     //    if (openedWindowCount >= 4 && !firstOpenObjectActivated)
@@ -268,9 +262,9 @@ public class ObjectFunctions : MonoBehaviour
     //}
 
 
-   
 
-  
+
+
     public void ResetRollerCoaster()
     {
         StartCoroutine(ResetRollerCoasterCoroutine()); 
@@ -290,49 +284,7 @@ public class ObjectFunctions : MonoBehaviour
         }
     }
 
-    //private IEnumerator ResetRollerCoasterCoroutine()
-    //{
-    //    //waits until current frame is done
-    //    yield return null;
-
-    //    rollerCoaster.SetActive(true);
-    //    portalOne.SetActive(true);
-    //    portalOneHalf.SetActive(true);
-    //    portalTwo.SetActive(true);
-    //    tracks.SetActive(true);
-    //}
-
-    //edit in case we want coroutined delay (didn't look gud tho so I scratched it for now (overlapping environments))
-    //Delays the studio disappearing
-
-    //not needed anymore since thats done with the animation ig
-    //private IEnumerator PlayClosingSound(int previousStudio)
-    //{
-    //    yield return new WaitForSeconds(closingSoundDelay);
-
-    //    //turns on selected studio
-    //    switch (previousStudio)
-    //    {
-    //        case 1:
-    //            if (audio1 != null) audio1.Play(); ;
-
-    //            break;
-    //        case 2:
-    //            if (audio2 != null) audio2.Play(); ;
-
-    //            break;
-    //        case 3:
-    //            if (audio3 != null) audio3.Play(); ;
-
-    //            break;
-    //        case 4:
-    //            if (audio4 != null) audio4.Play();
-
-    //            break;
-    //    }
-
-
-    //}
+    
 
 
     //reset TOIMEEE
@@ -350,6 +302,20 @@ public class ObjectFunctions : MonoBehaviour
         if (Studio2 != null) Studio2.SetActive(false);
         if (Studio3 != null) Studio3.SetActive(false);
         if (Studio4 != null) Studio4.SetActive(false);
+
+        //stops active rollercoaster delays
+        if (rcDelayCoroutine != null)
+        {
+            StopCoroutine(rcDelayCoroutine);
+            rcDelayCoroutine = null;
+        }
+
+        //turns off all the rollercoasters in the windows so they wait for delay after reset
+        if (rcObject1 != null) rcObject1.SetActive(false);
+        if (rcObject2 != null) rcObject2.SetActive(false);
+        if (rcObject3 != null) rcObject3.SetActive(false);
+        if (rcObject4 != null) rcObject4.SetActive(false);
+
 
         //progress of opening windows reset
         windowsOpened = new bool[4];
