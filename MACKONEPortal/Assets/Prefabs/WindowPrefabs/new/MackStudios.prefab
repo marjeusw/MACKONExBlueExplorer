@@ -13204,7 +13204,19 @@ MonoBehaviour:
   - prefab: {fileID: 0}
     Prefab: {fileID: 8408007453986803470, guid: 42d11bcfb62604c43b4416643da8787a, type: 3}
     probability: 0
-    Probability: 0
+    Probability: 40
+  - prefab: {fileID: 0}
+    Prefab: {fileID: 8408007453986803470, guid: 91ffc5a314e16d2478e70cd55122ffbc, type: 3}
+    probability: 0
+    Probability: 25
+  - prefab: {fileID: 0}
+    Prefab: {fileID: 8408007453986803470, guid: a5137b914d0f2764ca2154829bcdc615, type: 3}
+    probability: 0
+    Probability: 25
+  - prefab: {fileID: 0}
+    Prefab: {fileID: 8408007453986803470, guid: 3c8a5419e4c4ce94486c7e0721d3e324, type: 3}
+    probability: 0
+    Probability: 10
   m_Method: 1
   m_Space: 0
   m_Spacing: {x: 0.3, y: 0.3}
