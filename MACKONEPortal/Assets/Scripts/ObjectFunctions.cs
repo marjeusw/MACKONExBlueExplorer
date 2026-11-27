@@ -23,6 +23,7 @@ public class ObjectFunctions : MonoBehaviour
     public GameObject CracksRollerCoaster; //for the spline restart stuff
 
     private bool[] windowsOpened = new bool[4]; //for all 4 windows to track for crack
+    [SerializeField] private float openDelay = 1.5f;
     private int openedWindowCount = 0;
     private bool firstOpenObjectActivated = false; //for the coroutine
 
@@ -153,8 +154,8 @@ public class ObjectFunctions : MonoBehaviour
         if (windowAudio != null)
         {
             //Debug.Log("[ObjectFunctions] OPENING AUDIO: " + windowAudio.name + " | Parent: " + windowAudio.transform.parent.name + " | Position: " + windowAudio.transform.position);
-
-            windowAudio.Play();
+            StartCoroutine(OpeningWindowSoundDelay(windowAudio)); //gotta delay sound so it doesn't drive me mad
+            
         }
 
         //turns off all studios first
@@ -195,6 +196,12 @@ public class ObjectFunctions : MonoBehaviour
         //plays closing sound
         //StartCoroutine(PlayClosingSound(previousStudio));
     }
+
+    private IEnumerator OpeningWindowSoundDelay(AudioSource windowAudio) //delays the sound cause it plays too quickly normally
+    {
+        yield return new WaitForSeconds(openDelay);
+        windowAudio.Play();
+    } 
 
     //unlocks studio switching when window closes
     public void UnlockWindow(int studioNumber)
@@ -269,7 +276,7 @@ public class ObjectFunctions : MonoBehaviour
         firstOpenObjectActivated = true;
         finalCracksCoroutine = null;
 
-        Debug.Log("cracks show up wee");
+        //Debug.Log("cracks show up wee");
     }
 
     private IEnumerator RollerCoasterDelay(GameObject targetRcObject/*, GameObject splineObject*/) //to turn on the rollercoaster after delay so it starts movin
@@ -283,7 +290,7 @@ public class ObjectFunctions : MonoBehaviour
       
         spline = targetRcObject.GetComponent<SplineAnimate>();
         spline.Restart(true);
-        Debug.Log("rc goin RESTART");
+        //Debug.Log("rc goin RESTART");
         //gotta turn it off at the start just in case
         targetRcObject.SetActive(false);
 
@@ -291,7 +298,7 @@ public class ObjectFunctions : MonoBehaviour
 
         targetRcObject.SetActive(true);
         spline.Play();
-        Debug.Log("rc goin after" + rcDelay + "secs");
+        //Debug.Log("rc goin after" + rcDelay + "secs");
         
 
     }
@@ -336,7 +343,7 @@ public class ObjectFunctions : MonoBehaviour
     //reset TOIMEEE
     public void ResetEverything() //cept the window pos of course
     {
-        Debug.Log("resetting everything");
+        //Debug.Log("resetting everything");
 
         //studio switching reset
         windowIsOpen = false;
@@ -400,7 +407,7 @@ public class ObjectFunctions : MonoBehaviour
         confirmSpline = GetComponent<ConfirmEnableSpline>();
         confirmSpline.hasConfirmedAnchorPos = false;
 
-        Debug.Log("Everythings Resettt");
+        //Debug.Log("Everythings Resettt");
     }
 
 }

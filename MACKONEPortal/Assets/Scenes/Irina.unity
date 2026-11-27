@@ -17807,6 +17807,7 @@ MonoBehaviour:
   firstOpenObject: {fileID: 335198110}
   finalCracksDelay: 16
   CracksRollerCoaster: {fileID: 95586948}
+  openDelay: 1.5
   audio1: {fileID: 0}
   audio2: {fileID: 0}
   audio3: {fileID: 0}
