@@ -20,6 +20,7 @@ public class ObjectFunctions : MonoBehaviour
     [SerializeField] private GameObject firstOpenObject;
     [SerializeField] private float finalCracksDelay = 7f;
     private Coroutine finalCracksCoroutine; //so the final cracks tunring back on is not dependent on the glow anymore
+    public GameObject CracksRollerCoaster; //for the spline restart stuff
 
     private bool[] windowsOpened = new bool[4]; //for all 4 windows to track for crack
     private int openedWindowCount = 0;
@@ -244,6 +245,7 @@ public class ObjectFunctions : MonoBehaviour
         if (firstOpenObject != null)
         {
             firstOpenObject.SetActive(true);
+            
         }
 
         firstOpenObjectActivated = true;
@@ -358,6 +360,10 @@ public class ObjectFunctions : MonoBehaviour
         //first open object (CRACKS) tunred off
         if (firstOpenObject != null)
         {
+            //right here reset spline
+            spline = CracksRollerCoaster.GetComponent<SplineAnimate>(); //this would be better on before its setactive false
+            spline.Restart(true);
+            spline.Play();
             firstOpenObject.SetActive(false);
         }
 

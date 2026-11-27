@@ -922,26 +922,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7681836574461405994, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
   m_PrefabInstance: {fileID: 5648876092418668986}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &95586958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 95586948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f93d10e008897a498611f9abd91262b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  PortalMaskLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  rollerCoaster: {fileID: 5648876092418668987}
-  portalOne: {fileID: 1800538323}
-  portalTwo: {fileID: 1522405201}
-  tracks: {fileID: 925774986}
-  delayrc: 0.5
 --- !u!1 &125978034
 GameObject:
   m_ObjectHideFlags: 0
@@ -17825,6 +17805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectFunctions
   firstOpenObject: {fileID: 335198110}
   finalCracksDelay: 16
+  CracksRollerCoaster: {fileID: 95586948}
   audio1: {fileID: 0}
   audio2: {fileID: 0}
   audio3: {fileID: 0}
@@ -20024,11 +20005,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &1800538323 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 59867093635628c41b9ddef7db232378, type: 3}
-  m_PrefabInstance: {fileID: 1355712630}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1811866115 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 11b1d25636efae248b0005ad77e89837, type: 3}
@@ -24283,9 +24259,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3848260121387882696, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 95586951}
-    - targetCorrespondingSourceObject: {fileID: 3848260121387882696, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 95586958}
     - targetCorrespondingSourceObject: {fileID: 1480466337367340745, guid: 31b7b92032de37c4b9612e10c1fa90a2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5648876092418668990}
