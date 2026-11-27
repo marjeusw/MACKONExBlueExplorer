@@ -18,7 +18,7 @@ public class StudioLoader : MonoBehaviour
 
     private ObjectFunctions objectManager;
 
-    private bool openingSoundPlayed = false; //to keep the sound from playing when window is already opened
+    private bool studioActivated = false; //to keep the sound from playing when window is already opened
 
     private void Start()
     {
@@ -50,7 +50,7 @@ public class StudioLoader : MonoBehaviour
     //for the reset button
     public void ResetLoaderState()
     {
-        openingSoundPlayed = false;
+        studioActivated = false;
         StopAllCoroutines();
         //no delayed sound playing after pressing reset
         
@@ -65,20 +65,22 @@ public class StudioLoader : MonoBehaviour
             return;
         }
 
-        if (doorBehaviour != null && doorBehaviour.isClosed)
+        if ((doorBehaviour != null && doorBehaviour.isClosed) || studioActivated) //retunrs when looking at window again so that sound (and also text) donÄt animate again when looked away and back
         {
             return;
         }
 
        
         //same here
-        objectManager.ShowStudio(studioNumber, openingSoundPlayed ? null : windowAudio); //? : is short for if else -> if openingsound true then no audio, if false play audio
-        openingSoundPlayed = true;
+        objectManager.ShowStudio(studioNumber, windowAudio); 
+        studioActivated = true;
+
+        //maybe here something so the text onj won't start again
     }
 
     public void OnDoorClosed()
     {
-        openingSoundPlayed = false; //resets the bool for no window playing sound twice after opening
+        studioActivated = false; //resets the bool for no window playing sound twice after opening
         //unlocks studio switching
         if (objectManager != null)
         {

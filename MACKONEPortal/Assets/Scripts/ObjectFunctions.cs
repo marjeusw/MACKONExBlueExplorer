@@ -396,6 +396,9 @@ public class ObjectFunctions : MonoBehaviour
 
         //resets rollercoastzer
         ResetRollerCoaster();
+        // and finálcracks ENter condition
+        confirmSpline = GetComponent<ConfirmEnableSpline>();
+        confirmSpline.hasConfirmedAnchorPos = false;
 
         Debug.Log("Everythings Resettt");
     }
