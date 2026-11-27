@@ -1024,6 +1024,16 @@
                     "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
+                },
+                {
+                    "name": "CONFIRM_UI",
+                    "type": "Button",
+                    "id": "97bd6cb9-e733-401d-a034-3007ad666d93",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -1057,6 +1067,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "RESET",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd64493e-895d-40a0-a11a-6b27d9f9b1db",
+                    "path": "<XRController>{LeftHand}/{SecondaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CONFIRM_UI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "88b1b042-3812-4562-b98c-d5d025341717",
+                    "path": "<XRController>{RightHand}/{SecondaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CONFIRM_UI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6f5207a0-b0a8-435e-a462-28415b74d8aa",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CONFIRM_UI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

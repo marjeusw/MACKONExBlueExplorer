@@ -2,10 +2,12 @@
 //mostly which studio should currently be visible
 
 using JetBrains.Annotations;
+using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Splines;
 public class ObjectFunctions : MonoBehaviour
 {
     //[SerializeField] private float closingSoundDelay = 0.5f;
@@ -186,7 +188,7 @@ public class ObjectFunctions : MonoBehaviour
 
     public void ActivateFirstOpenObject(int studioNumber)
     {
-        //studios 1-4 into index array ß-3
+        //studios 1-4 into index array ï¿½-3
         int index = studioNumber - 1;
 
         //checks if the studio number is valid
@@ -236,7 +238,9 @@ public class ObjectFunctions : MonoBehaviour
 
     private IEnumerator RollerCoasterDelay(GameObject targetRcObject) //to turn on the rollercoaster after delay so it starts movin
     {
-
+        //targetRcObject.GetComponent<SplineAnimate>().Restart(true); //SplineAnimate.Restart(true);
+                                                                        //SplineAnimate.Play();
+                                                                        //if you want an offset you gotta do a float and then SplineAnimate.StartOffset = thenewfloat; and then play again 
         if (targetRcObject == null) yield break;
         
         //gotta turn it off at the start just in case

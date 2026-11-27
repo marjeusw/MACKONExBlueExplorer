@@ -33,6 +33,7 @@ public class Pointer : MonoBehaviour
     [Header("Components")]
     [SerializeField] private SplineAnimate splineAnimate;
     [SerializeField] private SplineInstantiate splineInstantiate;
+    [SerializeField] private SplineExtrude splineExtrude;
 
     [Header("Initialisation")]
     [SerializeField] private float initialDelay = 1f;
@@ -120,6 +121,12 @@ public class Pointer : MonoBehaviour
         {
             Debug.LogError("Pointer: Not enough spline knots!");
             yield break;
+        }
+
+// Enable animation after spline generation.
+        if (splineExtrude != null)
+        {
+            splineExtrude.enabled = true;
         }
 
         // Enable spline visualisation.
