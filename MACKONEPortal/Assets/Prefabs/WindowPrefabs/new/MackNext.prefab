@@ -4520,6 +4520,7 @@ MonoBehaviour:
   studioNumber: 4
   studioObject: {fileID: 5567976879846119525}
   rollerCoasterObject: {fileID: 6880925266539578360}
+  splineObject: {fileID: 6880925266539578360}
   windowAudio: {fileID: 2255609932734274476}
   closingSoundDelay: 0
 --- !u!82 &2255609932734274476

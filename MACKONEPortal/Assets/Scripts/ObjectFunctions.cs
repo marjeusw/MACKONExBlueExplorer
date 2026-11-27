@@ -6,6 +6,7 @@ using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Splines;
 public class ObjectFunctions : MonoBehaviour
@@ -41,12 +42,23 @@ public class ObjectFunctions : MonoBehaviour
     public GameObject rcObject3;
     public GameObject rcObject4;
 
+    //fir the animate spline reset
+    //public GameObject sObject1; //roller coaster parents with splines on them /that we don't want to turn off completely which is why we ref them only for the spline functions)
+    //public GameObject sObject2;
+    //public GameObject sObject3;
+    //public GameObject sObject4;
+
     [SerializeField] private float rcDelay = 7.0f;
 
     private Coroutine rcDelayCoroutine; //for tracking the coroutine for stopping it when resetting
 
     //for the rollercoasters to trigger
     private List<RollerCoasterTrigger> allRollerCoasters = new List<RollerCoasterTrigger>();
+
+    //for the spline
+    private SplineAnimate spline;
+
+
 
 
     //registers the windows for the reset button (same idea as the registerstudio to get the reference of each window)
@@ -68,7 +80,7 @@ public class ObjectFunctions : MonoBehaviour
     }
 
     //stores refs to all 4 studios and their audio (since after being instantiated, prefabs forgor all references that aren't in the prefab so studios gotta be reffed like dis)
-    public void RegisterStudio(int studioNumber, GameObject studio, GameObject rollerCoasterObject, AudioSource windowAudio)
+    public void RegisterStudio(int studioNumber, GameObject studio, GameObject rollerCoasterObject, /*GameObject splineObject,*/ AudioSource windowAudio)
     {
         switch (studioNumber)
         {
@@ -76,24 +88,28 @@ public class ObjectFunctions : MonoBehaviour
                 Studio1 = studio;
                 audio1 = windowAudio;
                 rcObject1 = rollerCoasterObject;
+                //rcObject1 = splineObject;
                 break;
 
             case 2:
                 Studio2 = studio;
                 audio2 = windowAudio;
                 rcObject2 = rollerCoasterObject;
+                //sObject2 = splineObject;
                 break;
 
             case 3:
                 Studio3 = studio;
                 audio3 = windowAudio;
                 rcObject3 = rollerCoasterObject;
+                //sObject3 = splineObject;
                 break;
 
             case 4:
                 Studio4 = studio;
                 audio4 = windowAudio;
                 rcObject4 = rollerCoasterObject;
+                //sObject4 = splineObject;
                 break;
 
             default:
@@ -149,20 +165,20 @@ public class ObjectFunctions : MonoBehaviour
             case 1:
                 if (Studio1 != null) Studio1.SetActive(true);
                 //startcoroutine for rollercoasterobj
-                rcDelayCoroutine = StartCoroutine(RollerCoasterDelay(rcObject1));
+                rcDelayCoroutine = StartCoroutine(RollerCoasterDelay(rcObject1 /*,sObject1*/));
 
                 break;
             case 2:
                 if (Studio2 != null) Studio2.SetActive(true);
-                rcDelayCoroutine = StartCoroutine(RollerCoasterDelay(rcObject2));
+                rcDelayCoroutine = StartCoroutine(RollerCoasterDelay(rcObject2 /*,sObject2*/));
                 break;
             case 3:
                 if (Studio3 != null) Studio3.SetActive(true);
-                rcDelayCoroutine = StartCoroutine(RollerCoasterDelay(rcObject3)); //calling the coroutine and also making rcDelayCoroutine not null (for ref in reset function)
+                rcDelayCoroutine = StartCoroutine(RollerCoasterDelay(rcObject3 /*,sObject3*/)); //calling the coroutine and also making rcDelayCoroutine not null (for ref in reset function)
                 break;
             case 4:
                 if (Studio4 != null) Studio4.SetActive(true);
-                rcDelayCoroutine = StartCoroutine(RollerCoasterDelay(rcObject4));
+                rcDelayCoroutine = StartCoroutine(RollerCoasterDelay(rcObject4 /*,sObject4*/));
                 break;
             default:
                 Debug.LogWarning("Invalid studio numbrr: " + studioNumber);
@@ -236,19 +252,25 @@ public class ObjectFunctions : MonoBehaviour
         Debug.Log("cracks show up wee");
     }
 
-    private IEnumerator RollerCoasterDelay(GameObject targetRcObject) //to turn on the rollercoaster after delay so it starts movin
+    private IEnumerator RollerCoasterDelay(GameObject targetRcObject/*, GameObject splineObject*/) //to turn on the rollercoaster after delay so it starts movin
     {
         //targetRcObject.GetComponent<SplineAnimate>().Restart(true); //SplineAnimate.Restart(true);
                                                                         //SplineAnimate.Play();
                                                                         //if you want an offset you gotta do a float and then SplineAnimate.StartOffset = thenewfloat; and then play again 
-        if (targetRcObject == null) yield break;
         
+        
+        if (targetRcObject == null) yield break;
+      
+        spline = targetRcObject.GetComponent<SplineAnimate>();
+        spline.Restart(true);
+        Debug.Log("rc goin RESTART");
         //gotta turn it off at the start just in case
         targetRcObject.SetActive(false);
 
         yield return new WaitForSeconds(rcDelay);
 
         targetRcObject.SetActive(true);
+        spline.Play();
         Debug.Log("rc goin after" + rcDelay + "secs");
         
 

@@ -10,6 +10,7 @@ public class StudioLoader : MonoBehaviour
     [SerializeField] private int studioNumber; //ref to which studio number it is
     [SerializeField] private GameObject studioObject;
     [SerializeField] private GameObject rollerCoasterObject;
+    //[SerializeField] private GameObject splineObject;
     [SerializeField] private AudioSource windowAudio; //for handing over the audio source on the shutter
     [SerializeField] private float closingSoundDelay = 0.5f; //for delay of window sound close
 
@@ -32,14 +33,14 @@ public class StudioLoader : MonoBehaviour
             return;
         }
 
-        if (studioObject == null && rollerCoasterObject == null)
+        if (studioObject == null && rollerCoasterObject == null /*&& splineObject == null*/)
         {
-            Debug.LogError("[StudioLoader] studio object and roller coaster object not assigned");
+            Debug.LogError("[StudioLoader] studio object and roller coaster and spline object not assigned");
             return;
         }
 
        //the meat of the stuff (just calling the function in object manager)
-        objectManager.RegisterStudio(studioNumber, studioObject, rollerCoasterObject, windowAudio); //all the stuff being referenced to object manager in here
+        objectManager.RegisterStudio(studioNumber, studioObject, rollerCoasterObject, /*splineObject,*/ windowAudio); //all the stuff being referenced to object manager in here
 
         //same for the windows (for reset button)
         objectManager.RegisterWindow(doorBehaviour);
