@@ -1640,7 +1640,7 @@ PrefabInstance:
     - target: {fileID: 5397952581704065356, guid: ecd06bf6c48629547b9eab0ed8c8c013, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2c8a952998ab4c2429ed2ff845e1cd81, type: 2}
+      objectReference: {fileID: 2100000, guid: d755c254294543245ac3c96bb6e0594f, type: 2}
     - target: {fileID: 5565826911625523895, guid: ecd06bf6c48629547b9eab0ed8c8c013, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6864,7 +6864,7 @@ PrefabInstance:
     - target: {fileID: 7644003678517689071, guid: 866dec228bb10ed44a8fe6a34ca918fc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2c8a952998ab4c2429ed2ff845e1cd81, type: 2}
+      objectReference: {fileID: 2100000, guid: d755c254294543245ac3c96bb6e0594f, type: 2}
     - target: {fileID: 7847639039906850501, guid: 866dec228bb10ed44a8fe6a34ca918fc, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -11658,6 +11658,7 @@ GameObject:
   - component: {fileID: 925774992}
   - component: {fileID: 925774994}
   - component: {fileID: 925774995}
+  - component: {fileID: 925774996}
   m_Layer: 0
   m_Name: PointerObject
   m_TagString: Untagged
@@ -11778,7 +11779,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2c8a952998ab4c2429ed2ff845e1cd81, type: 2}
+  - {fileID: 2100000, guid: d755c254294543245ac3c96bb6e0594f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11873,6 +11874,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConfirmEnableSpline
   myPointerScript: {fileID: 925774989}
+--- !u!114 &925774996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925774986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b74686beb0670a4ea61325c0acf4411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineInstantiate
+  m_Container: {fileID: 925774988}
+  m_ItemsToInstantiate:
+  - prefab: {fileID: 0}
+    Prefab: {fileID: 8408007453986803470, guid: 42d11bcfb62604c43b4416643da8787a, type: 3}
+    probability: 0
+    Probability: 40
+  - prefab: {fileID: 0}
+    Prefab: {fileID: 8408007453986803470, guid: 91ffc5a314e16d2478e70cd55122ffbc, type: 3}
+    probability: 0
+    Probability: 25
+  - prefab: {fileID: 0}
+    Prefab: {fileID: 8408007453986803470, guid: a5137b914d0f2764ca2154829bcdc615, type: 3}
+    probability: 0
+    Probability: 25
+  - prefab: {fileID: 0}
+    Prefab: {fileID: 8408007453986803470, guid: 3c8a5419e4c4ce94486c7e0721d3e324, type: 3}
+    probability: 0
+    Probability: 10
+  m_Method: 1
+  m_Space: 0
+  m_Spacing: {x: 0.3, y: 0.3}
+  m_Up: 1
+  m_Forward: 2
+  m_PositionOffset:
+    setup: 0
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    randomX: 0
+    randomY: 0
+    randomZ: 0
+    space: 0
+  m_RotationOffset:
+    setup: 0
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    randomX: 0
+    randomY: 0
+    randomZ: 0
+    space: 0
+  m_ScaleOffset:
+    setup: 0
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    randomX: 0
+    randomY: 0
+    randomZ: 0
+    space: 0
+  m_DeprecatedInstances: []
+  m_AutoRefresh: 1
+  m_Seed: -478969007
 --- !u!1001 &930511431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13005,7 +13068,7 @@ PrefabInstance:
     - target: {fileID: 4180507020868692628, guid: a893c1c9e62620c409d20323100e9473, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2c8a952998ab4c2429ed2ff845e1cd81, type: 2}
+      objectReference: {fileID: 2100000, guid: d755c254294543245ac3c96bb6e0594f, type: 2}
     - target: {fileID: 5340457713072322917, guid: a893c1c9e62620c409d20323100e9473, type: 3}
       propertyPath: m_Name
       value: MackMagic
@@ -24501,7 +24564,7 @@ PrefabInstance:
     - target: {fileID: 2529392052269736662, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2c8a952998ab4c2429ed2ff845e1cd81, type: 2}
+      objectReference: {fileID: 2100000, guid: d755c254294543245ac3c96bb6e0594f, type: 2}
     - target: {fileID: 3556605021154920835, guid: 5c82c20836ad5984b8c5018a29165f47, type: 3}
       propertyPath: m_IsActive
       value: 1
