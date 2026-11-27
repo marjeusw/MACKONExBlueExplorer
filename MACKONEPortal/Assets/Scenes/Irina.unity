@@ -11466,7 +11466,7 @@ MeshRenderer:
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &925774993
 MeshFilter:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -11479,7 +11479,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925774986}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73b690d087be94f4ebf144db5f6a2eb0, type: 3}
   m_Name: 
@@ -17769,6 +17769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1651583459}
   - component: {fileID: 1651583460}
+  - component: {fileID: 1651583461}
   m_Layer: 0
   m_Name: ObjectManager
   m_TagString: Untagged
@@ -17819,6 +17820,21 @@ MonoBehaviour:
   rcObject3: {fileID: 0}
   rcObject4: {fileID: 0}
   rcDelay: 7
+  confirmSpline: {fileID: 1651583461}
+--- !u!114 &1651583461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651583458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b690d087be94f4ebf144db5f6a2eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConfirmEnableSpline
+  myPointerScript: {fileID: 925774989}
+  hasConfirmedAnchorPos: 0
 --- !u!1 &1659202445
 GameObject:
   m_ObjectHideFlags: 0
@@ -18633,7 +18649,7 @@ MonoBehaviour:
     Callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 925774995}
+        - m_Target: {fileID: 1651583461}
           m_TargetAssemblyTypeName: ConfirmEnableSpline, Assembly-CSharp
           m_MethodName: OnConfirmExecute
           m_Mode: 1

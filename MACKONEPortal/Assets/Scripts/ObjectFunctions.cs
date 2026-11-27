@@ -59,6 +59,9 @@ public class ObjectFunctions : MonoBehaviour
     //for the spline
     private SplineAnimate spline;
 
+    //for last cracks appearing 
+    [SerializeField] private ConfirmEnableSpline confirmSpline;
+
 
 
 
@@ -242,12 +245,27 @@ public class ObjectFunctions : MonoBehaviour
     {
         yield return new WaitForSeconds(finalCracksDelay);
 
-        if (firstOpenObject != null)
+        confirmSpline = GetComponent<ConfirmEnableSpline>();
+
+
+        if (firstOpenObject == null || confirmSpline == null)
         {
-            firstOpenObject.SetActive(true);
-            
+            //in case its missing the references
+            finalCracksCoroutine = null;
+            yield break;
+
         }
 
+        if (confirmSpline.hasConfirmedAnchorPos == false)
+        {
+            Debug.LogError("Gotta press ENter firsttt");
+
+        }
+
+        //waits until Enter is Pressed (OnCOnfirmExecute is executed so the bool in it is set to true)
+        yield return new WaitUntil(() => confirmSpline.hasConfirmedAnchorPos);
+
+        firstOpenObject.SetActive(true);
         firstOpenObjectActivated = true;
         finalCracksCoroutine = null;
 

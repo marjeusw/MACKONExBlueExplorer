@@ -4520,7 +4520,6 @@ MonoBehaviour:
   studioNumber: 4
   studioObject: {fileID: 5567976879846119525}
   rollerCoasterObject: {fileID: 6880925266539578360}
-  splineObject: {fileID: 6880925266539578360}
   windowAudio: {fileID: 2255609932734274476}
   closingSoundDelay: 0
 --- !u!82 &2255609932734274476
@@ -10869,6 +10868,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ad9a936e36dc8f741b3dca0c0065b028, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b5439bc7ffe8d8a439e4b9fffeb41ec9, type: 2}
     - target: {fileID: 919132149155446097, guid: ad9a936e36dc8f741b3dca0c0065b028, type: 3}
       propertyPath: m_Name
       value: box (1)
